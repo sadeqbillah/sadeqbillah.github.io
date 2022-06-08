@@ -21,6 +21,15 @@
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
     <link rel="stylesheet" href="plugin/menu/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PE5VSF539"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-9PE5VSF539');
+    </script>
 </head>
 
 <body>
@@ -47,11 +56,57 @@
                 <p style="text-align:justify; font-size:0.5em;">Over 15 years of industry experience in Product Research, Development and Commercialization. Skilled at quick prototyping, leveraging emerging technologies and providing technical leadership & guidance to development teams. Proven track record of delivering high-profile projects achieving all business & customer goals for schedule, budget, functionality, usability, quality, and performance.</p>
             </section>
 
-            <section>
-                <h2>Courses</h2>
+            <section data-visibility="hidden">
+                <h2>Online Courses</h2>
+                <div class="multi-col">
+                    <div class="col">
+                        <h5>UI</h5>
+                        <ul class="p-10 text-small">
+                            <li>C# WinForms</li>
+                            <li>EMGU CV</li>
+                            <li>ONVIF</li>
+                            <li>MQTT</li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <h5>Edge Computing</h5>
+                        <ul class="p-10 text-small">
+                            <li>FFMPEG/GStreamer</li>
+                            <li>C++</li>
+                            <li>OpenCV</li>
+                            <li>OpenVINO</li>
+                            <li>Yolo V3 Tiny</li>
+                            <li>MQTT</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
-            <section>
+            <section data-visibility="hidden">
                 <h2>Certifications</h2>
+                <div class="multi-col">
+                    <div class="col">
+                        <h5>UI</h5>
+                        <ul class="p-10 text-small">
+                            <li>C# WinForms</li>
+                            <li>EMGU CV</li>
+                            <li>ONVIF</li>
+                            <li>MQTT</li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <h5>Edge Computing</h5>
+                        <ul class="p-10 text-small">
+                            <li>FFMPEG/GStreamer</li>
+                            <li>C++</li>
+                            <li>OpenCV</li>
+                            <li>OpenVINO</li>
+                            <li>Yolo V3 Tiny</li>
+                            <li>MQTT</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
             <section>
                 <h2>Projects</h2>
@@ -276,7 +331,7 @@
                 </section>
             </section>
             <section>
-                <section data-background="#B39BC8">
+                <section data-background="#557A95">
                     <h2 class="r-fit-text">Objective Quality Assessment Method for Stitched Images</h2>
                     <div class="multi-col">
                         <div class="col">
@@ -295,7 +350,7 @@
                         <i class="fa-solid fa-angles-down"></i>
                     </a>
                 </section>
-                <section data-menu-title="Features" data-background="#B39BC8">
+                <section data-menu-title="Features" data-background="#557A95">
                     <h5>Description</h5>
                     <ul class="p-10 text-small">
                         <li>Despite many proposed algorithms, the no objective quality evaluation method is developed, so the comparison of algorithms are performed only in subjective way.</li>
@@ -308,7 +363,7 @@
                     </ul>
                     <img src="assets/objective.png" />
                 </section>
-                <section data-menu-title="Screens" data-background="#B39BC8">
+                <section data-menu-title="Screens" data-background="#557A95">
                     <div class="container">
                         <h4>UI Description</h4>
                         <div class="lg-container">
@@ -401,38 +456,65 @@
                         <i class="fa-solid fa-angles-down"></i>
                     </a>
                 </section>
-                <section data-menu-title="Description" data-background="#557A95">
-                    <section data-menu-title="Description" data-background="#7395AE">
-                        <h5>Description</h5>
-                        <ul class="p-10 text-small">
-                            <li>A method for Stitching a Large Number of Videos recorded by a large Number of Individual Users through a Cellular Phone Camera at a Venue.</li>
-                            <li>We solved Time Synchronization problem using audio synchronization, Avoided Repeated Transformation Matrix Calculations, and Corrected Camera Sensor Mismatch using Color Transfer Method</li>
-                            <li>Experimental Results Show that the Proposed Algorithm Shows better Performance in Terms of Computation Speed and Subjective Image Quality than that of Screen Stitching.</li>
-                            <li>Link to&nbsp;<a href="https://www.youtube.com/watch?v=YodDu9_c60Y" target="_blank">Demo Video</a>&nbsp;|&nbsp;<a href="https://www.koreascience.or.kr/article/JAKO201720861242232.pdf" target="_blank">Publication 1</a>&nbsp;|&nbsp;<a href="https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE07219232&mark=0&useDate=&ipRange=N&accessgl=Y&language=ko_KR&hasTopBanner=true" target="_blank">Publication 2</a></li>
-                        </ul>
-                        <img src="assets/videostitch.png" />
-                    </section>
+                <section data-background="#557A95">
+                    <h5>Description</h5>
+                    <ul class="p-10 text-small">
+                        <li>Omni-view or 360° video provides realistic/virtual experience to the viewers.</li>
+                        <li>
+                            However the cost and construction difficulty of panorama broadcasting is an obstacle for personal broadcasting service.
+                        </li>
+                        <li>
+                            We integrate a full stack open-source solution for capture, broadcast and display of panoramic videos.
+                        </li>
+                        <li>
+                            The total cost is just less than 400 USD for fisheye camera, RICOH Theta S 360°, and one or two personal PC/laptop of typical programmer spec.
+                        </li>
+                        <li>Link to&nbsp;<a href="https://www.youtube.com/watch?v=YodDu9_c60Y" target="_blank">Demo Video</a>&nbsp;|&nbsp;<a href="https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE07082982&mark=0&useDate=&ipRange=N&accessgl=Y&language=ko_KR&hasTopBanner=true" target="_blank">Publication </a>
+                    </ul>
+                    <img src="assets/omniview.png" />
+
                 </section>
             </section>
 
             <section>
                 <section data-background="#B1A296">
                     <h2 class="r-fit-text">Casino Managers Dashboard [GSA System-To-System Protocol] </h2>
-                    <p><b>Technologies:</b><br />C# WinForms, EMGU CV, C, TensorFlow, ONVIF, MQTT</p>
-                    <p><i class="fa-solid fa-down fa-6x"></i></p>
-                    <br>
-                    <a href="#/2/1" class="navigate-down">
+                    <div class="multi-col">
+                        <div class="col">
+                            <h5>&nbsp;</h5>
+                            <ul class="p-10 text-small">
+                                <li>Linux</li>
+                                <li>Python</li>
+                                <li>dJango</li>
+                                <li>Tornado</li>
+                                <li>jQuery</li>
+                                <li>Server Sent Events [SSE]</li>
+                                <li>lXML</li>
+                                <li>Bootstrap</li>
+                            </ul>
+                            <h5>&nbsp;</h5>
+                        </div>
+                    </div>
+                    <a href="#/11/1" class="navigate-down">
                         <i class="fa-solid fa-angles-down"></i>
                     </a>
                 </section>
                 <section data-menu-title="Features" data-background="#B1A296">
-                    <h2>Features</h2>
-                    <p>Projecting Tracked Item Locations in Map View, Video Streaming, Video Playback, Search Function and Reporting based on AI results, Real-Time Object Detection and Classification using Deep Network, Face and Fingerprint Detection Sensor Management, Zone-Based Detection and Alarm Mechanism, Bi-Directional Communication Channel for heterogeneous devices </p>
+                    <ul class="p-10 text-small">
+                        <li>GSA (Gaming Standards Association)’s S2S (System to System) standard provides harmonizing protocol
+between any gaming and non-gaming host systems in the casino back office and Casino business area</li>
+                        <li>
+                            Its technical details and implementation are rarely open to the academia and public audience
+                        </li>
+                        <li>
+                            We implemented S2S protocol engine and systems, which is, to our knowledge, the first case in
+                            Korea
+                        </li>
+                        <li>Link to&nbsp;<a href="https://youtu.be/zkQRS5QBTHQ" target="_blank">Demo Video</a>&nbsp;|&nbsp;<a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002153938" target="_blank">Publication </a>
+                    </ul>
+                    <img src="assets/s2s.png" />
                 </section>
-                <section data-menu-title="Screens" data-background="#B1A296">
-                    <h2>Technologies</h2>
-                    <p>Projecting Tracked Item Locations in Map View, Video Streaming, Video Playback, Search Function and Reporting based on AI results, Real-Time Object Detection and Classification using Deep Network, Face and Fingerprint Detection Sensor Management, Zone-Based Detection and Alarm Mechanism, Bi-Directional Communication Channel for heterogeneous devices </p>
-                </section>
+                
             </section>
 
             <section>
@@ -520,173 +602,45 @@
                 </section>
             </section>
 
-            <section>
+           
                 <section data-background="#5085A5">
                     <h2 class="r-fit-text">Cisco Security & Surveillance Suite Mobile Client Android Tab/Phone</h2>
-                    <p><b>Technologies:</b><br />C# WinForms, EMGU CV, C, TensorFlow, ONVIF, MQTT</p>
-                    <p><i class="fa-solid fa-down fa-6x"></i></p>
-                    <br>
-                    <a href="#/2/1" class="navigate-down">
-                        <i class="fa-solid fa-angles-down"></i>
-                    </a>
-                </section>
-                <section data-menu-title="Features" data-background="#5085A5">
-                    <h2>Features</h2>
-                    <p>Projecting Tracked Item Locations in Map View, Video Streaming, Video Playback, Search Function and Reporting based on AI results, Real-Time Object Detection and Classification using Deep Network, Face and Fingerprint Detection Sensor Management, Zone-Based Detection and Alarm Mechanism, Bi-Directional Communication Channel for heterogeneous devices </p>
-                </section>
-                <section data-menu-title="Screens" data-background="#5085A5">
-                    <h2>Technologies</h2>
-                    <p>Projecting Tracked Item Locations in Map View, Video Streaming, Video Playback, Search Function and Reporting based on AI results, Real-Time Object Detection and Classification using Deep Network, Face and Fingerprint Detection Sensor Management, Zone-Based Detection and Alarm Mechanism, Bi-Directional Communication Channel for heterogeneous devices </p>
-                </section>
-            </section>
+                    <h5>IPICS Suite REST API, Android Responsive UI</h5>
+                    <div class="multi-col">
+                        <div class="col">
 
-            <section>
+                            <ul class="p-10 text-small">
+                                <li>Live Video</li>
+                                <li>Location Based Camera Selection</li>
+                                <li>Map and Dispatch Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+
+            
                 <section data-background="#8FC1E3">
                     <h2 class="r-fit-text">Cisco IP Interoperability and Collaboration System (IPICS) Mobile Client</h2>
-                    <p><b>Technologies:</b><br />C# WinForms, EMGU CV, C, TensorFlow, ONVIF, MQTT</p>
-                    <p><i class="fa-solid fa-down fa-6x"></i></p>
-                    <br>
-                    <a href="#/2/1" class="navigate-down">
-                        <i class="fa-solid fa-angles-down"></i>
-                    </a>
-                </section>
-                <section data-menu-title="Features" data-background="#8FC1E3">
-                    <h2>Features</h2>
-                    <p>Projecting Tracked Item Locations in Map View, Video Streaming, Video Playback, Search Function and Reporting based on AI results, Real-Time Object Detection and Classification using Deep Network, Face and Fingerprint Detection Sensor Management, Zone-Based Detection and Alarm Mechanism, Bi-Directional Communication Channel for heterogeneous devices </p>
-                </section>
-                <section data-menu-title="Screens" data-background="#8FC1E3">
-                    <h2>Technologies</h2>
-                    <p>Projecting Tracked Item Locations in Map View, Video Streaming, Video Playback, Search Function and Reporting based on AI results, Real-Time Object Detection and Classification using Deep Network, Face and Fingerprint Detection Sensor Management, Zone-Based Detection and Alarm Mechanism, Bi-Directional Communication Channel for heterogeneous devices </p>
-                </section>
-            </section>
-
-
-            <!-- Example of nested vertical slides -->
-
-
-            <section>
-                <!--data-background="https://images.pexels.com/photos/162616/coffee-work-desk-mug-keyboard-162616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"-->
-                <div class="container">
-                    <h4>UI Description</h4>
-                    <div class="lg-container">
-                        <img class="lg-image"
-                             src="assets\SmartThermalSolution.jpg" />
-                        <div style="top: 15%; left: 15%;" class="lg-hotspot lg-hotspot--top-left">
-                            <div class="lg-hotspot__button"></div>
-                            <div class="lg-hotspot__label">
-                                <h4>Person Detection Result</h4>
-                                <ul class="p-10">
-                                    <li>
-                                        When a person is detected in the candidate area, the silhouette is highlighted with a bounding box. Also audio alarm is raised according to settings.
-                                    </li>
-                                    <li>
-                                        Video is streamed through RTSP. Detection Boxes are received through MQTT messages and overlayed on the video frames at render time.
-                                    </li>
-                                    <li>
-                                        Utilizing Motion Detection on the Frames, we can detect people upto 9x4 pixel size.
-                                    </li>
-                                </ul>
-
-                            </div>
+                    <h5>Blackberry/Android Client &amp; IPICS Suite REST API</h5>
+                    <div class="multi-col">
+                        <div class="col">
+                            
+                            <ul class="p-10 text-small">
+                                <li>Single/Multiple Agency Incidents</li>
+                                <li>Access Incident-Related PTT Channels, Status Journal</li>
+                            </ul>
                         </div>
+                        <div class="col">
 
-                        <div style="top: 9%; left: 90%;" class="lg-hotspot lg-hotspot--top-right">
-                            <div class="lg-hotspot__button"></div>
-                            <div class="lg-hotspot__label">
-                                <p>
-                                    Connection status to the Edge PC is shown with color labels [Green/Red].
-                                </p>
-                            </div>
-                        </div>
-
-                        <div style="top: 75%; left: 25%;" class="lg-hotspot lg-hotspot--bottom-left">
-                            <div class="lg-hotspot__button"></div>
-                            <div class="lg-hotspot__label">
-                                <h4>Log View</h4>
-                                <p>All the detection logs are saved in NUC HDD and transferred to the Monitoring PC in case the administrator needs to escalate the situation to authorities.</p>
-                            </div>
-                        </div>
-
-                        <div style="top: 87%; left: 85%;" class="lg-hotspot lg-hotspot--bottom-right">
-                            <div class="lg-hotspot__button"></div>
-                            <div class="lg-hotspot__label">
-                                <h4>Camera Controller</h4>
-                                <p>Admin can pan, tilt, zoom, wipe lense using these buttons that are implemented through ONVIF/PELCO Protocol</p>
-                            </div>
+                            <ul class="p-10 text-small">
+                                <li>Up-to-date Incident Status &amp; MJPEG Live Streaming</li>
+                                <li>Access/Add Incident-related Video Clips, Photographs and Status Updates</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section>
-                <!--data-background="https://images.pexels.com/photos/162616/coffee-work-desk-mug-keyboard-162616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"-->
-                <div class="container">
-                    <h4>UI Description</h4>
-                    <div class="lg-container">
-                        <img class="lg-image"
-                             src="assets\LicensePlateGenerator.jpg" />
-                        <div style="top: 12%; left: 40%;" class="lg-hotspot lg-hotspot--top-left">
-                            <div class="lg-hotspot__button"></div>
-                            <div class="lg-hotspot__label">
-                                <h4>Plate Type and Range</h4>
-                                <ul class="p-10">
-                                    <li>
-                                        We can generate only one type of plate at the same time. We support all types of License Plates co-existing on the roads.
-                                    </li>
-                                    <li>
-                                        Initial digits decides the range of the first 2/3 digits of the license plates
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
-
-                        <div style="top: 30%; left: 51%;" class="lg-hotspot lg-hotspot--top-right">
-                            <div class="lg-hotspot__button"></div>
-                            <div class="lg-hotspot__label">
-                                <h4>Embedded Characters</h4>
-                                <ul class="p-10">
-                                    <li>
-                                        Korean Characters to be embedded within the numbers. We can select all or ignore some of them as some characters are specific to distinct vehicle types.
-                                    </li>
-                                    <li>
-                                        Military plates' templates are not released in commercial use version of the software for security measures.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div style="top: 58%; left: 40%;" class="lg-hotspot lg-hotspot--bottom-left">
-                            <div class="lg-hotspot__button"></div>
-                            <div class="lg-hotspot__label">
-                                <h4>End Digits</h4>
-                                <ul class="p-10">
-                                    <li>
-                                        Last digits of the plates. Choosing 0001 to 9999 will make all the plates from 1 to 9999.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div style="top: 75%; left: 40%;" class="lg-hotspot lg-hotspot--bottom-right">
-                            <div class="lg-hotspot__button"></div>
-                            <div class="lg-hotspot__label">
-                                <h4>Rotation and Filters</h4>
-                                <ul class="p-10">
-                                    <li>
-                                        User can choose any rotation angles to expand the angle of detection.
-                                    </li>
-                                    <li>
-                                        Several filters can be used to increase effectiveness in different weather and lighting conditions.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
+                </section>
+            
         </div>
     </div>
     <script src="dist/reveal.js"></script>
