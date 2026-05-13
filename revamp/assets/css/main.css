@@ -1437,7 +1437,7 @@ section,
 }
 
 .skills .skills-sidebar {
-  padding-left: 40px;
+  /* padding-left: 40px; */
 }
 
 .skills .skills-sidebar .expertise-highlight {
@@ -1509,7 +1509,7 @@ section,
 
 .skills .skills-sidebar .technologies-section .tech-stack {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
 }
 
@@ -1761,6 +1761,7 @@ section,
 }
 
 .resume .education-skills .education-grid .education-card {
+ 
   background: var(--surface-color);
   border-radius: 12px;
   padding: 2rem;
@@ -1866,6 +1867,18 @@ section,
   color: var(--heading-color);
   margin-bottom: 1.5rem;
   letter-spacing: -0.01em;
+}
+
+.two-col {
+   display:grid;
+  grid-template-columns: 1fr 1fr;
+  
+
+}
+
+.two-col .cert-item {
+  margin:0 10px;
+
 }
 
 .resume .education-skills .education-grid .certification-section .certifications .cert-item {
