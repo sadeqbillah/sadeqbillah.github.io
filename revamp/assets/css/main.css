@@ -3422,6 +3422,11 @@ section,
     margin-top: 2rem;
   }
 
+  .portfolio-details .hero-section .hero-image2 {
+    margin-top: 2rem;
+    padding:3px;
+  }
+
   .portfolio-details .content-section .project-specs {
     margin-top: 3rem;
   }
