@@ -106,8 +106,8 @@
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#portfolio">Project Portfoltio</a></li>
-            <li class="current">EV Battery Bolting System</li>
+            <li><a href="index.html#portfolio">Project Portfolio</a></li>
+            <li class="current">2D + 3D Vision‑Fusion Pipeline for EV‑Battery Robotic Bolting</li>
           </ol>
         </nav>
       </div>
@@ -126,12 +126,13 @@
                   <span class="category">Industrial Automation</span>
                   <span class="year">2025</span>
                 </div>
-                <h1 class="project-title">EV Battery Bolting System</h1>
+                <h1 class="project-title">2D + 3D Vision‑Fusion Pipeline for EV‑Battery Robotic Bolting</h1>
                 <p class="project-summary">Automated bolting system for electric vehicle battery assembly with precision and efficiency.</p>
                 <div class="project-tags">
                   <span class="tag">Hyundai Motors</span>
-                  <span class="tag">Sustainability</span>
-                  <span class="tag">Platform</span>
+                  <span class="tag">OpenCV</span>
+                  <span class="tag">Cognex Vision Pro</span>
+                  <span class="tag">Hyundai Robot, Nachi Robot Control</span>
                 </div>
               </div>
             </div>
@@ -146,13 +147,13 @@
         <div class="visual-showcase" data-aos="fade-up" data-aos-delay="100">
           <div class="showcase-gallery">
             <div class="gallery-item large" data-aos="zoom-in" data-aos-delay="150">
-              <img src="assets/img/portfolio/portfolio-7.webp" alt="Design showcase" class="img-fluid glightbox">
+              <img src="assets/img/portfolio/ev_yolo.webp" alt="Sample Yolo Output" class="img-fluid glightbox">
             </div>
             <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/portfolio/portfolio-5.webp" alt="Design showcase" class="img-fluid glightbox">
+              <img src="assets/img/portfolio/ev_align.webp" alt="Alignment Visualization" class="img-fluid glightbox">
             </div>
             <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
-              <img src="assets/img/portfolio/portfolio-8.webp" alt="Design showcase" class="img-fluid glightbox">
+              <img src="assets/img/portfolio/ev_2d.webp" alt="2D Vision Alignment" class="img-fluid glightbox">
             </div>
           </div>
         </div>
@@ -161,17 +162,25 @@
           <div class="row">
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
               <div class="main-content">
-                <h2>Design Philosophy</h2>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</p>
-                <p>Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi consequatur quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+                <h2>Project Description</h2>
+                <p>This project showcases a hybrid vision‑fusion system developed for electric‑vehicle battery assembly, enabling precise robotic bolting between the car body and battery pack while meeting strict takt‑time requirements.</p>
+                <p>The pipeline integrates 3D structured‑light vision, YOLO‑based object detection, and 2D optical alignment to achieve sub‑millimeter accuracy in bolt positioning.</p>
+                <ol>
+                  <li>The 3D camera first captures spatial alignment between the car body and battery, calculating tilt and orientation (Yaw, Pitch, Roll).</li>
+                  <li>Using YOLO, the system detects battery holes and determines their coordinates.</li>
+                  <li>The robot receives HTTP/TCP commands to move to each hole position.</li>
+                  <li>A 2D camera then inspects inside the hole, analyzing circularity to align the car‑body and battery holes perfectly.</li>
+                  <li>Once alignment is achieved, the system computes the bolting angle, rotates the tool hand, and executes the bolting operation.</li>
+                  <li>The process repeats for all six holes, with real‑time feedback when tilt exceeds permissible limits.</li>
+                </ol>
+                <p>This solution merges machine vision, robotics, and deep learning to deliver a robust, adaptive bolting process that minimizes error, maximizes speed, and ensures consistent assembly quality across varying vehicle models.</p>
               </div>
             </div>
             <div class="col-lg-4 offset-lg-1" data-aos="fade-up" data-aos-delay="200">
               <div class="project-specs">
                 <div class="spec-item">
                   <h5>Client</h5>
-                  <p>EcoLife Solutions</p>
+                  <p>Hyundai Motors</p>
                 </div>
                 <div class="spec-item">
                   <h5>Timeline</h5>
@@ -179,96 +188,43 @@
                 </div>
                 <div class="spec-item">
                   <h5>My Role</h5>
-                  <p>Product Designer</p>
+                  <p>R&amp;D, Software Design, Implementation</p>
                 </div>
                 <div class="spec-item">
                   <h5>Team</h5>
-                  <p>7 Members</p>
+                  <p>2 Member</p>
                 </div>
                 <div class="spec-item">
                   <h5>Deliverables</h5>
-                  <p>Web Platform, Mobile App</p>
+                  <p>C# WinForms Application with Robot Communication</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="process-timeline" data-aos="fade-up" data-aos-delay="100">
-          <div class="timeline-header">
-            <h2>Design Process</h2>
-          </div>
-          <div class="timeline-steps">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
-              <div class="step-marker">
-                <span class="step-number">1</span>
-              </div>
-              <div class="step-content">
-                <h4>Research &amp; Analysis</h4>
-                <p>Similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga et harum quidem rerum facilis est et expedita distinctio nam libero tempore.</p>
-              </div>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-              <div class="step-marker">
-                <span class="step-number">2</span>
-              </div>
-              <div class="step-content">
-                <h4>Ideation &amp; Concepts</h4>
-                <p>Cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus omnis voluptas assumenda est omnis dolor repellendus.</p>
-              </div>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="250">
-              <div class="step-marker">
-                <span class="step-number">3</span>
-              </div>
-              <div class="step-content">
-                <h4>Prototyping &amp; Testing</h4>
-                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum.</p>
-              </div>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-              <div class="step-marker">
-                <span class="step-number">4</span>
-              </div>
-              <div class="step-content">
-                <h4>Implementation &amp; Launch</h4>
-                <p>Hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat consectetur adipisci velit.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        
         <div class="tools-section" data-aos="fade-up" data-aos-delay="100">
           <div class="row align-items-center">
             <div class="col-lg-5">
               <h2>Tools &amp; Technologies</h2>
-              <p>Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error.</p>
             </div>
             <div class="col-lg-6 offset-lg-1">
               <div class="tools-grid">
                 <div class="tool-category" data-aos="fade-up" data-aos-delay="150">
-                  <h5>Design</h5>
+                  <h5>Hardware</h5>
                   <div class="tool-list">
-                    <span class="tool-item">Figma</span>
-                    <span class="tool-item">Sketch</span>
-                    <span class="tool-item">Adobe XD</span>
-                    <span class="tool-item">Principle</span>
+                    <span class="tool-item">HikVision Camera</span>
+                    <span class="tool-item">Zivid Camera</span>
+                    <span class="tool-item">Hyundai/Nachi Robot</span>
                   </div>
                 </div>
                 <div class="tool-category" data-aos="fade-up" data-aos-delay="200">
-                  <h5>Development</h5>
+                  <h5>Sofware/Tools</h5>
                   <div class="tool-list">
-                    <span class="tool-item">React</span>
-                    <span class="tool-item">Node.js</span>
-                    <span class="tool-item">MongoDB</span>
-                  </div>
-                </div>
-                <div class="tool-category" data-aos="fade-up" data-aos-delay="250">
-                  <h5>Analytics</h5>
-                  <div class="tool-list">
-                    <span class="tool-item">Hotjar</span>
-                    <span class="tool-item">Mixpanel</span>
-                    <span class="tool-item">Google Analytics</span>
+                    <span class="tool-item">C# WinForms</span>
+                    <span class="tool-item">OpenCV</span>
+                    <span class="tool-item">Cognex Vision Pro</span>
                   </div>
                 </div>
               </div>
@@ -279,10 +235,10 @@
         <div class="impact-metrics" data-aos="fade-up" data-aos-delay="100">
           <div class="metrics-container">
             <div class="metrics-header">
-              <h2>Project Impact</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+              <h2>Project Output</h2>
+              <!--p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p-->
               <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-                <iframe src="https://www.youtube.com/embed/MrsO31NcMAI?si=pAX_UPlK20D2e8Af" 
+                <iframe src="https://www.youtube.com/embed/clyElB36yNA?si=9o-_zq0dlpo467V8" 
                   style="position:absolute; top:0; left:0; width:100%; height:100%;" 
                   frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                   encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -290,7 +246,7 @@
                 </iframe>
               </div>
             </div>
-            <div class="metrics-grid">
+            <!--div class="metrics-grid">
               <div class="metric-card" data-aos="fade-up" data-aos-delay="150">
                 <div class="metric-value">92%</div>
                 <div class="metric-label">User Satisfaction</div>
@@ -308,10 +264,10 @@
                 <div class="metric-label">Conversion Increase</div>
               </div>
             </div>
-          </div>
+          </div-->
         </div>
 
-        <div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
+        <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
           <div class="gallery-slider swiper init-swiper">
             <script type="application/json" class="swiper-config">
               {
@@ -353,24 +309,24 @@
             </div>
             <div class="swiper-pagination"></div>
           </div>
-        </div>
+        </div-->
 
         <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
           <div class="nav-wrapper">
-            <a href="#" class="nav-link prev-project">
+            <a href="doortrim.html" class="nav-link prev-project">
               <div class="nav-content">
                 <span class="nav-direction">← Previous</span>
-                <span class="nav-title">Digital Banking Solution</span>
+                <span class="nav-title">Door Trim Inspection System</span>
               </div>
             </a>
-            <a href="#" class="nav-link all-projects">
+            <a href="index.html#portfolio" class="nav-link all-projects">
               <i class="bi bi-grid-3x3-gap"></i>
               <span>All Projects</span>
             </a>
-            <a href="#" class="nav-link next-project">
+            <a href="mcf.html" class="nav-link next-project">
               <div class="nav-content">
                 <span class="nav-direction">Next →</span>
-                <span class="nav-title">Healthcare Mobile App</span>
+                <span class="nav-title">Metal Crack Detection System</span>
               </div>
             </a>
           </div>
@@ -382,7 +338,7 @@
 
   </main>
 
-   <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Meer Sadeq Billah</h3>
       <p>AI APPLICATION DEVELOPER • COMPUTER VISION INTEGRATOR • 18+ YEARS • 100+ PROJECTS</p>
