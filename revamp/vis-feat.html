@@ -17,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
-  
+
   <!-- Vendor CSS Files -->
   <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -127,24 +127,33 @@
                   <span class="year">2017</span>
                 </div>
                 <h1 class="project-title">Panorama Quality Assessment</h1>
-                <p class="project-summary">A tool for assessing the quality of image stitching results in computer vision applications.</p>
+                <p class="project-summary">Developed an <span class="accent-text">objective quality assessment method
+                    for stitched and warped images</span> to evaluate geometric and photometric distortions. Unlike
+                  traditional approaches that relied solely on subjective evaluation, this solution introduced a <span
+                    class="accent-text">Delaunay‑triangulation based framework</span> for quantifiable, repeatable, and
+                  accurate image quality measurement.</p>
                 <div class="project-tags">
-                  <span class="tag">Hyundai Motors</span>
-                  <span class="tag">Sustainability</span>
-                  <span class="tag">Platform</span>
+                  <span class="tag">Image Stitching</span>
+                  <span class="tag">Objective Quality Assessment</span>
+                  <span class="tag">Delaunay Triangulation</span>
+                  <span class="tag">Affine Transformation</span>
+                  <span class="tag">PSNR</span>
+                  <span class="tag">Geometric Distortion</span>
+                  <span class="tag">Computer Vision</span>
                 </div>
               </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
               <div class="hero-image">
-                <img src="assets/img/portfolio/ev.webp" alt="EV Battery Bolting System" class="img-fluid" loading="lazy">
+                <img src="assets/img/portfolio/vis-feat.webp" alt="EV Battery Bolting System" class="img-fluid"
+                  loading="lazy">
               </div>
             </div>
           </div>
         </div>
 
         <div class="visual-showcase" data-aos="fade-up" data-aos-delay="100">
-          
+
           <div class="showcase-gallery">
             <div class="gallery-item large" data-aos="zoom-in" data-aos-delay="150">
               <img src="assets/img/portfolio/e2e.webp" alt="End-to-End Process" class="img-fluid glightbox">
@@ -155,8 +164,8 @@
             <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
               <img src="assets/img/portfolio/data_comm.webp" alt="Data Communication" class="img-fluid glightbox">
             </div>
-             
-             
+
+
           </div>
         </div>
 
@@ -165,23 +174,38 @@
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
               <div class="main-content ">
                 <h2>Project Description</h2>
-                <p>This system automates pallet alignment for forklift operations using a 3D vision‑based approach. It integrates <span class="accent-text">YOLOv4‑Tiny</span> for object detection and <span class="accent-text">RealSense depth sensing</span> to compute spatial alignment between pallet planes. The <span class="accent-text">GuideFinder</span> module calculates roll, pitch, and yaw deviations, providing real‑time feedback to the operator through visual overlays and alignment metrics.</p>
-                <p>This innovation reduced manual adjustment time by <span class="accent-text">2 hours per vehicle</span>, saving <span class="accent-text">millions of labor hours annually</span> and improving operational accuracy and safety in industrial logistics.</p>
+                <p>We proposed and implemented a <span class="accent-text">novel assessment method</span> that addressed
+                  the lack of objective evaluation tools in stitched image processing. The approach segmented reference
+                  and target images using <span class="accent-text">Delaunay triangulation</span>
+                  based on matched points, enabling precise measurement of geometric distortions. By calculating the
+                  average Euclidean distance between triangulated segments, the system provided a robust metric for
+                  alignment accuracy.</p>
+                <h5>Key Features Delivered:</h5>
+                <ul>
+                  <li>Delaunay‑triangulation based segmentation of reference and target images</li>
+                  <li>Geometric distortion measurement using average Euclidean distance</li>
+                  <li>Photometric distortion evaluation using PSNR averages and histograms</li>
+                  <li>Affine transformation handling for stitched/warped image comparison</li>
+                  <li>Objective framework enabling algorithm benchmarking beyond subjective evaluation</li>
+                </ul>
+                <p>This method demonstrated improved reliability in comparing stitching algorithms, offering both <span
+                    class="accent-text">computational efficiency and quantitative accuracy</span> for geometric and
+                  photometric distortion analysis.</p>
               </div>
             </div>
             <div class="col-lg-4 offset-lg-1" data-aos="fade-up" data-aos-delay="200">
               <div class="project-specs">
                 <div class="spec-item">
                   <h5>Client</h5>
-                  <p>Hyundai Motor Corporation</p>
+                  <p>Academia</p>
                 </div>
                 <div class="spec-item">
                   <h5>Timeline</h5>
-                  <p>5 Months</p>
+                  <p>6 Months</p>
                 </div>
                 <div class="spec-item">
                   <h5>My Role</h5>
-                  <p>R&D, Implementation</p>
+                  <p>Ideation, Academic Research and Implementation</p>
                 </div>
                 <div class="spec-item">
                   <h5>Team</h5>
@@ -189,52 +213,100 @@
                 </div>
                 <div class="spec-item">
                   <h5>Deliverables</h5>
-                  <p>QT Based 3D Guidance System</p>
+                  <p>Objective Quality Assessment Method and Tool</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        
-        <div class="tools-section" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-center">
-            <div class="col-lg-5">
-              <h2>Tools &amp; Technologies</h2>
-              <p>The system architecture employs a real‑time AI‑driven vision stack optimized for industrial precision and scalability. It combines deep learning inference, 3D spatial analysis, and modular service orchestration to deliver high‑speed detection and alignment feedback. Built with lightweight Python microservices and GPU‑accelerated frameworks, the design ensures low‑latency performance, seamless integration with existing factory systems, and maintainable deployment across production environments.</p>
+        <div class="process-timeline" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-header">
+            <h2>Publication</h2>
+          </div>
+          <div class="timeline-steps">
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+              <div class="step-marker">
+                <span class="step-number">1</span>
+              </div>
+              <div class="step-content">
+                <h4><a href="https://koreascience.kr/article/JAKO201811648107649.page">Objective quality assessment
+                    method for stitched images</a></h4>
+                <p>Recently, stitching techniques are used for obtaining wide FOV, eg, panorama contents, from normal
+                  cameras. Despite many proposed algorithms, the no objective quality evaluation method is developed, so
+                  the comparison of algorithms are performed only in subjective way. The paper proposes
+                  a'Delaunay-triangulation based objective assessment method'for evaluating the geometric and
+                  photometric distortions of stitched or warped images. The reference and target images are segmented by
+                  Delaunay-triangulation based on matched points between two images, the average Euclidian distance is
+                  used for geometric distortion measure, and the average or histogram of PSNR for photometric measure.
+                  We shows preliminary results with several test images and stitching methods for demonstrate the
+                  benefits and application.</p>
+              </div>
             </div>
-            <div class="col-lg-6 offset-lg-1">
-              <div class="tools-grid">
-                <div class="tool-category" data-aos="fade-up" data-aos-delay="200">
-                  <h5>Sofware/Tools</h5>
-                  <div class="tool-list">
-                    <span class="tool-item">Python</span>
-                    <span class="tool-item">OpenCV</span>
-                    <span class="tool-item">YOLO Tiny</span>
-                    <span class="tool-item">Open3D</span>
-                    <span class="tool-item">QT</span> 
+            <div class="timeline-steps">
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+                <div class="step-marker">
+                  <span class="step-number">2</span>
+                </div>
+                <div class="step-content">
+                  <h4><a href="https://koreascience.or.kr/article/CFKO201736257094297.page">Objective Quality Assessment
+                      for Stitched Image and Video</a></h4>
+                  <p>Recently, stitching techniques are used for obtaining wide FOV, eg, panorama contents, from normal
+                    cameras. Despite many proposed algorithms, the no objective quality evaluation method is developed,
+                    so the comparison of algorithms are performed only in subjective way. The paper proposes
+                    a'Delaunay-triangulation based objective assessment method'for evaluating the geometric and
+                    photometric distortions of stitched or warped images. The reference and target images are segmented
+                    by Delaunay-triangulation based on matched points between two images, the average Euclidian distance
+                    is used for geometric distortion measure, and the average or histogram of PSNR for photometric
+                    measure. We shows preliminary results with several test images and stitching methods for demonstrate
+                    the benefits and application.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="tools-section" data-aos="fade-up" data-aos-delay="100">
+            <div class="row align-items-center">
+              <div class="col-lg-5">
+                <h2>Tools &amp; Technologies</h2>
+                <p>The solution was implemented in <span class="accent-text">C++ with CLI WinForms</span>, leveraging
+                  <span class="accent-text">OpenCV</span> for image processing and transformation operations. The
+                  architecture combined <span class="accent-text">Delaunay triangulation</span> for geometric
+                  segmentation, <span class="accent-text">affine transformation</span> for alignment, and <span
+                    class="accent-text">PSNR metrics</span> for photometric distortion evaluation. This ensured a
+                  scalable and repeatable framework for assessing stitched images across diverse datasets.</p>
+              </div>
+              <div class="col-lg-6 offset-lg-1">
+                <div class="tools-grid">
+                  <div class="tool-category" data-aos="fade-up" data-aos-delay="200">
+                    <h5>Software/Tools</h5>
+                    <div class="tool-list">
+                      <span class="tool-item">C++ CLI WinForms</span>
+                      <span class="tool-item">OpenCV</span>
+                      <span class="tool-item">Delaunay Triangulation</span>
+                      <span class="tool-item">Affine Transformation</span>
+                      <span class="tool-item">PSNR (Peak Signal‑to‑Noise Ratio)</span>
+                      <span class="tool-item">Geometric Distortion Metrics</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="impact-metrics" data-aos="fade-up" data-aos-delay="100">
-          <div class="metrics-container">
-            <div class="metrics-header">
-              <h2>Project Output</h2>
-              <!--p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p-->
-              <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-                <iframe src="https://www.youtube.com/embed/MrsO31NcMAI?si=eZiOmFnG4tOL6o1Y" 
-                  style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                  encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+          <div class="impact-metrics" data-aos="fade-up" data-aos-delay="100">
+            <div class="metrics-container">
+              <div class="metrics-header">
+                <h2>Project Output</h2>
+                <!--p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p-->
+                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+                  <iframe src="https://www.youtube.com/embed/MrsO31NcMAI?si=eZiOmFnG4tOL6o1Y"
+                    style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                  encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                  </iframe>
+                </div>
               </div>
-            </div>
-            <!--div class="metrics-grid">
+              <!--div class="metrics-grid">
               <div class="metric-card" data-aos="fade-up" data-aos-delay="150">
                 <div class="metric-value">92%</div>
                 <div class="metric-label">User Satisfaction</div>
@@ -253,9 +325,9 @@
               </div>
             </div>
           </div-->
-        </div>
+            </div>
 
-        <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
+            <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
           <div class="gallery-slider swiper init-swiper">
             <script type="application/json" class="swiper-config">
               {
@@ -299,34 +371,34 @@
           </div>
         </div-->
 
-        <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
-          <div class="nav-wrapper">
-            <a href="lpr.html" class="nav-link prev-project">
-              <div class="nav-content">
-                <span class="nav-direction">← Previous</span>
-                <span class="nav-title">Sythetic Number Plate Generator</span>
+            <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
+              <div class="nav-wrapper">
+                <a href="lpr.html" class="nav-link prev-project">
+                  <div class="nav-content">
+                    <span class="nav-direction">← Previous</span>
+                    <span class="nav-title">Sythetic Number Plate Generator</span>
+                  </div>
+                </a>
+                <a href="#" class="nav-link all-projects">
+                  <i class="bi bi-grid-3x3-gap"></i>
+                  <span>All Projects</span>
+                </a>
+                <a href="stitch.html" class="nav-link next-project">
+                  <div class="nav-content">
+                    <span class="nav-direction">Next →</span>
+                    <span class="nav-title">Video Stitching</span>
+                  </div>
+                </a>
               </div>
-            </a>
-            <a href="#" class="nav-link all-projects">
-              <i class="bi bi-grid-3x3-gap"></i>
-              <span>All Projects</span>
-            </a>
-            <a href="stitch.html" class="nav-link next-project">
-              <div class="nav-content">
-                <span class="nav-direction">Next →</span>
-                <span class="nav-title">Video Stitching</span>
-              </div>
-            </a>
-          </div>
-        </div>
+            </div>
 
-      </div>
+          </div>
 
     </section><!-- /Portfolio Details Section -->
 
   </main>
 
-   <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Meer Sadeq Billah</h3>
       <p>AI APPLICATION DEVELOPER • COMPUTER VISION INTEGRATOR • 18+ YEARS • 100+ PROJECTS</p>
@@ -338,7 +410,8 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights
+            Reserved</span>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
@@ -353,7 +426,8 @@
 
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
