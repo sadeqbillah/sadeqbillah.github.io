@@ -102,12 +102,12 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container">
-        <h1>Segmentation Improvement</h1>
+        <h1>Cloth Segmentation API</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#portfolio">Project Portfolio</a></li>
-            <li class="current">Segmentation Improvement</li>
+            <li class="current">Cloth Segmentation API</li>
           </ol>
         </nav>
       </div>
@@ -126,18 +126,24 @@
                   <span class="category">Computer Vision &amp; Image Processing</span>
                   <span class="year">2023</span>
                 </div>
-                <h1 class="project-title">Segmentation Improvement</h1>
-                <p class="project-summary">Improving clothing segmentation by leveraging CRF with Part Grouping Networks.</p>
+                <h1 class="project-title">Cloth Segmentation API</h1>
+                <p class="project-summary">Developed and optimized a <span class="accent-text">Clothing Segmentation API</span> based on the CIHP‑PGN network, enabling near real‑time inference for fashion image processing. The system reduced <span class="accent-text">inference time from 23 seconds to just 2 seconds</span>, while improving segmentation accuracy and handling class merging, resizing, and boundary optimization challenges.</p>
                 <div class="project-tags">
-                  <span class="tag">Hyundai Motors</span>
-                  <span class="tag">Sustainability</span>
-                  <span class="tag">Platform</span>
+                  <span class="tag">Clothing Segmentation</span>
+                  <span class="tag">CIHP‑PGN</span>
+                  <span class="tag">CRF Optimization</span>
+                  <span class="tag">PIL Resize</span>
+                  <span class="tag">OpenCV</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Fashion AI</span>
+                  <span class="tag">Image Processing</span>
+                  <span class="tag">API Development</span>
                 </div>
               </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
               <div class="hero-image">
-                <img src="assets/img/portfolio/segim.webp" alt="Segmentation Improvement" class="img-fluid" loading="lazy">
+                <img src="assets/img/portfolio/segim.webp" alt="Cloth Segmentation API" class="img-fluid" loading="lazy">
               </div>
             </div>
           </div>
@@ -165,8 +171,21 @@
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
               <div class="main-content ">
                 <h2>Project Description</h2>
-                <p>This system automates pallet alignment for forklift operations using a 3D vision‑based approach. It integrates <span class="accent-text">YOLOv4‑Tiny</span> for object detection and <span class="accent-text">RealSense depth sensing</span> to compute spatial alignment between pallet planes. The <span class="accent-text">GuideFinder</span> module calculates roll, pitch, and yaw deviations, providing real‑time feedback to the operator through visual overlays and alignment metrics.</p>
-                <p>This innovation reduced manual adjustment time by <span class="accent-text">2 hours per vehicle</span>, saving <span class="accent-text">millions of labor hours annually</span> and improving operational accuracy and safety in industrial logistics.</p>
+                <p> We prepared a <span class="accent-text">speed‑optimized inference pipeline for the CIHP‑PGN network</span>, reducing processing time significantly. 
+                A placeholder mechanism was introduced, allowing admins to configure image sizes before inference. 
+                <span class="accent-text"><i>We solved a critical issue with OpenCV’s NEAREST resize method, which incorrectly altered label sets, by switching to the PIL library for resizing, 
+                ensuring label consistency.</i></span></p>
+                <h5>Key Features Delivered:</h5>
+                <ul>
+                  <li>Near real‑time inference pipeline (23s → 2s)</li>
+                  <li>Placeholder configuration for image resizing</li>
+                  <li>Correct label preservation using PIL resize</li>
+                  <li>Automatic class merging (e.g., outer + dress, pants + skirt)</li>
+                  <li>Boundary optimization using CRF (with noted limitations)</li>
+                  <li>Accuracy ~73% on test datasets</li>
+                  <li>Manual adjustment support for complex textures or patterns</li>
+                </ul>
+                <p>We also implemented <span class="accent-text">automatic merging of overlapping classes</span> and optimized boundaries using CRF. While CRF improved segmentation in many cases, it struggled when clothing colors were similar to each other or the background. As PGN is state‑of‑the‑art but not perfect, manual adjustments were sometimes required, especially for complex textures or patterns.</p> 
               </div>
             </div>
             <div class="col-lg-4 offset-lg-1" data-aos="fade-up" data-aos-delay="200">
@@ -201,7 +220,10 @@
           <div class="row align-items-center">
             <div class="col-lg-5">
               <h2>Tools &amp; Technologies</h2>
-              <p>The system architecture employs a real‑time AI‑driven vision stack optimized for industrial precision and scalability. It combines deep learning inference, 3D spatial analysis, and modular service orchestration to deliver high‑speed detection and alignment feedback. Built with lightweight Python microservices and GPU‑accelerated frameworks, the design ensures low‑latency performance, seamless integration with existing factory systems, and maintainable deployment across production environments.</p>
+              <p>
+               The solution was implemented in <span class="accent-text">Python</span>, leveraging the <span class="accent-text">CIHP‑PGN network</span> for segmentation. <span class="accent-text">PIL</span> was used for accurate resizing, while <span class="accent-text">OpenCV</span> handled preprocessing tasks. <span class="accent-text">CRF</span> was applied for boundary refinement, though with limitations in color similarity scenarios. The architecture emphasized speed, accuracy, and adaptability, ensuring scalability for real‑world fashion AI use cases.
+              </p>
+              
             </div>
             <div class="col-lg-6 offset-lg-1">
               <div class="tools-grid">
@@ -209,10 +231,11 @@
                   <h5>Sofware/Tools</h5>
                   <div class="tool-list">
                     <span class="tool-item">Python</span>
+                    <span class="tool-item">CIHP‑PGN Network</span>
+                    <span class="tool-item">PIL (Python Imaging Library)</span>
                     <span class="tool-item">OpenCV</span>
-                    <span class="tool-item">YOLO Tiny</span>
-                    <span class="tool-item">Open3D</span>
-                    <span class="tool-item">QT</span> 
+                    <span class="tool-item">CRF (Conditional Random Fields)</span> 
+                    <span class="tool-item">Image Segmentation Pipeline</span>
                   </div>
                 </div>
               </div>
@@ -220,85 +243,7 @@
           </div>
         </div>
 
-        <div class="impact-metrics" data-aos="fade-up" data-aos-delay="100">
-          <div class="metrics-container">
-            <div class="metrics-header">
-              <h2>Project Output</h2>
-              <!--p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p-->
-              <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-                <iframe src="https://www.youtube.com/embed/MrsO31NcMAI?si=eZiOmFnG4tOL6o1Y" 
-                  style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                  encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
-              </div>
-            </div>
-            <!--div class="metrics-grid">
-              <div class="metric-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="metric-value">92%</div>
-                <div class="metric-label">User Satisfaction</div>
-              </div>
-              <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="metric-value">18k+</div>
-                <div class="metric-label">Monthly Users</div>
-              </div>
-              <div class="metric-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="metric-value">4.9</div>
-                <div class="metric-label">App Store Rating</div>
-              </div>
-              <div class="metric-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="metric-value">65%</div>
-                <div class="metric-label">Conversion Increase</div>
-              </div>
-            </div>
-          </div-->
-        </div>
-
-        <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
-          <div class="gallery-slider swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 4000
-                },
-                "slidesPerView": 1,
-                "spaceBetween": 30,
-                "breakpoints": {
-                  "768": {
-                    "slidesPerView": 2
-                  },
-                  "1200": {
-                    "slidesPerView": 3
-                  }
-                },
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }
-            </script>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="assets/img/portfolio/portfolio-12.webp" alt="Project detail" class="img-fluid glightbox" loading="lazy">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/portfolio/portfolio-2.webp" alt="Project detail" class="img-fluid glightbox" loading="lazy">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/portfolio/portfolio-6.webp" alt="Project detail" class="img-fluid glightbox" loading="lazy">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/portfolio/portfolio-10.webp" alt="Project detail" class="img-fluid glightbox" loading="lazy">
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div-->
-
+        
         <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
           <div class="nav-wrapper">
             <a href="vrar.html" class="nav-link prev-project">
