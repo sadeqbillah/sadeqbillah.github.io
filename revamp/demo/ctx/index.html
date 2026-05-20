@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automated Asset Segment Painter</title>
+  <style>
+    :root {
+      --bg-color: #1e1e24;
+      --panel-bg: #111116;
+      --border-color: #33333f;
+      --text-color: #e2e2e2;
+      --accent-color: #00ffff;
+      --danger-color: #ff4d4d;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Left Sidebar - Image List */
+    .sidebar-left {
+      width: 280px;
+      min-width: 240px;
+      background-color: var(--panel-bg);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .sidebar-header {
+      padding: 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-bottom: 1px solid var(--border-color);
+      letter-spacing: 0.5px;
+      text-align: center;
+      color: var(--accent-color);
+    }
+
+    /* Right Sidebar - Controls Panel */
+    .sidebar-right {
+      width: 320px;
+      min-width: 280px;
+      background-color: var(--panel-bg);
+      border-left: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .gallery-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .gallery-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .gallery-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .gallery-item.active {
+      background: rgba(0, 255, 255, 0.1);
+      border-color: var(--accent-color);
+    }
+
+    .gallery-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      background: #000;
+    }
+
+    .gallery-item .file-name {
+      font-size: 0.8rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+
+    /* Center Main Layout Area */
+    .main-preview {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      position: relative;
+    }
+
+    .canvas-container {
+      position: relative;
+      max-width: 100%;
+      max-height: 80vh;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      display: none;
+    }
+
+    #displayCanvas {
+      display: block;
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    .placeholder-text {
+      font-size: 1.1rem;
+      color: #666;
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .current-title {
+      position: absolute;
+      top: 20px;
+      font-size: 1rem;
+      background: rgba(0,0,0,0.5);
+      padding: 6px 16px;
+      border-radius: 20px;
+      display: none;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 5px;
+      color: #aaa;
+      letter-spacing: 0.5px;
+    }
+
+    .class-buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .class-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .class-row:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .class-row.highlighted {
+      border-color: var(--accent-color);
+      background: rgba(0, 255, 255, 0.05);
+    }
+
+    .class-name-label {
+      font-size: 0.85rem;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .control-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-actions input[type="color"] {
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      cursor: pointer;
+      background: transparent;
+      padding: 0;
+    }
+
+    .reset-btn {
+      background: transparent;
+      border: none;
+      color: #666;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0 4px;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+
+    .reset-btn:hover {
+      color: var(--danger-color);
+    }
+
+    .action-panel {
+      margin-top: 15px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 15px;
+    }
+
+    .download-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .download-btn:hover {
+      background-color: #218838;
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar-left">
+    <div class="sidebar-header">Asset Gallery</div>
+    <div class="gallery-list" id="galleryList"></div>
+  </div>
+
+  <div class="main-preview">
+    <div class="current-title" id="imageTitle"></div>
+    <div class="placeholder-text" id="placeholder">Scanning assets folder structure...</div>
+    
+    <div class="canvas-container" id="canvasContainer">
+      <canvas id="displayCanvas"></canvas>
+    </div>
+  </div>
+
+  <div class="sidebar-right">
+    <div class="section-title">SEGMENTS INDIVIDUAL COLORS</div>
+    <div class="class-buttons-container" id="classButtonsContainer"></div>
+
+    <div class="action-panel">
+      <button class="download-btn" id="downloadImageBtn">
+        <svg style="width:18px;height:18px" viewBox="0 0 24 24"><path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg>
+        Download Edited Image
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Asset Manifest generation representing your 20 images
+    // Generates sequence padding strings matching image counts seamlessly
+    const totalImagesCount = 20;
+    const baseImagePaths = [];
+    
+    // Assuming file naming nomenclature matches sequential lists (e.g., 1.png to 20.png or 01.png to 20.png)
+    // Update the index loops below if your files use a custom naming format (e.g., 'frame_01')
+    //for(let i = 1; i <= totalImagesCount; i++) {
+    //   baseImageIndexPaths.push(i.toString());
+    //}
+
+    baseImagePaths.push("0efSKfHcdkbxI5peDG5skR.jpg");
+    baseImagePaths.push("0jrDhVT7mxpF6LCBBKHmPj.jpg");
+    baseImagePaths.push("0KqhLGNJtapBZBtobPUu4R.jpg");
+    baseImagePaths.push("0LXZ8gIQr3C0ahbGQHDAWv.png");
+    
+    baseImagePaths.push("0XXaj5KTPexZfqi8zppJ9J.png");
+    baseImagePaths.push("2heWKKark4LMg8gVZ9CaWx.jpg");
+    //baseImagePaths.push("2qJx3x6WmedkI3nZ1lf0O3.jpg");
+    //baseImagePaths.push("03LC9KgH25x4MqzslurD0f.png");
+    
+    //baseImagePaths.push("04bsKWJtT6lKKjjHKS0iJQ.jpg");
+    baseImagePaths.push("04GFrbEP1HChN40LwMiHD2.png");
+    baseImagePaths.push("4qiNiNZNHKow4RFn9ALq9i.png");
+    //baseImagePaths.push("5Hss6eoANw821BGvj2Vs6k.jpg");
+
+    //baseImagePaths.push("5I5WgpoUvPTvEnDlmmZEwQ.jpg");
+    //baseImagePaths.push("6E1ZlC1hOwI8Ig5azpF8rX.jpg");
+    baseImagePaths.push("6JrGIOYHl5KQLiRSmP91SG.jpg");
+    //baseImagePaths.push("6oZ18rC3I1CbtkXB8vNguZ.png");
+
+    //baseImagePaths.push("07yIRNDQEaFC66FJExyDjN.jpg");
+    baseImagePaths.push("7dtjGGVRrirOI5dCsvslv2.png");
+    baseImagePaths.push("8gUBlAVUm121c5uyIAvv1T.png");
+    //baseImagePaths.push("avJIEadLuUlVrb8kB9N5Cd.jpg");
+
+
+    const galleryList = document.getElementById('galleryList');
+    const classButtonsContainer = document.getElementById('classButtonsContainer');
+    const displayCanvas = document.getElementById('displayCanvas');
+    const canvasContainer = document.getElementById('canvasContainer');
+    const placeholder = document.getElementById('placeholder');
+    const imageTitle = document.getElementById('imageTitle');
+    const downloadImageBtn = document.getElementById('downloadImageBtn');
+
+    let imageDataset = {}; 
+    let activeImageKey = null;
+    let loadedImageElement = null; 
+    let selectedOverlayClassId = null; // Tracks which segment layout has active outline focus
+
+    // --- COLOR SPACE MATH OVERRIDES ---
+    function rgbToHsv(r, g, b) {
+      r /= 255; g /= 255; b /= 255;
+      let max = Math.max(r, g, b), min = Math.min(r, g, b);
+      let h, s, v = max;
+      let d = max - min;
+      s = max === 0 ? 0 : d / max;
+      if (max === min) { h = 0; } 
+      else {
+        switch (max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+      }
+      return [h * 360, s * 100, v * 100];
+    }
+
+    function hsvToRgb(h, s, v) {
+      s /= 100; v /= 100;
+      let c = v * s;
+      let x = c * (1 - Math.abs((h / 60) % 2 - 1));
+      let m = v - c;
+      let r = 0, g = 0, b = 0;
+      if (h >= 0 && h < 60) { r = c; g = x; }
+      else if (h >= 60 && h < 120) { r = x; g = c; }
+      else if (h >= 120 && h < 180) { g = c; b = x; }
+      else if (h >= 180 && h < 240) { g = x; b = c; }
+      else if (h >= 240 && h < 300) { r = x; b = c; }
+      else if (h >= 300 && h < 360) { r = c; b = x; }
+      return [Math.round((r + m) * 255), Math.round((g + m) * 255), Math.round((b + m) * 255)];
+    }
+
+    // --- AUTOMATED INITIALIZATION ENGINE ---
+    window.addEventListener('DOMContentLoaded', async () => {
+      let firstValidKey = null;
+
+      for (let baseName of baseImagePaths) {
+        // Build relative asset routing vectors
+        const imgPath = `assets/input/${baseName}`;
+        const baseNameWithoutExt = baseName.replace(".png", "").replace(".jpg", "");
+        const jsonPath = `assets/json/${baseNameWithoutExt}.json`;
+
+        try {
+          // Verify source image availability profile on boot via background check
+          const imgCheck = await fetch(imgPath);
+          if(!imgCheck.ok) continue;
+
+          imageDataset[baseName] = {
+            imgUrl: imgPath,
+            jsonUrl: jsonPath,
+            jsonData: null,
+            colorState: {} // FIXED: Moving colorState container INSIDE each image object context
+          };
+
+          if (!firstValidKey) firstValidKey = baseName;
+
+          // Append to sidebar UI list directly
+          const itemNode = document.createElement('div');
+          itemNode.className = 'gallery-item';
+          itemNode.id = `thumb-${baseName}`;
+
+          const imgNode = document.createElement('img');
+          imgNode.src = imgPath;
+
+          const nameNode = document.createElement('div');
+          nameNode.className = 'file-name';
+          nameNode.textContent = `${baseName}`;
+
+          itemNode.appendChild(imgNode);
+          itemNode.appendChild(nameNode);
+          galleryList.appendChild(itemNode);
+
+          itemNode.addEventListener('click', () => {
+            document.querySelectorAll('.gallery-item').forEach(el => el.classList.remove('active'));
+            itemNode.classList.add('active');
+            loadMainItem(baseName);
+          });
+
+        } catch (err) {
+          console.warn(`Asset combination check failed for frame identifier: ${baseName}`, err);
+        }
+      }
+
+      if (firstValidKey) {
+        placeholder.style.display = 'none';
+        document.getElementById(`thumb-${firstValidKey}`).classList.add('active');
+        loadMainItem(firstValidKey);
+      } else {
+        placeholder.textContent = "Error: No matching asset files located in 'assets/input/' directory layout.";
+      }
+    });
+
+    async function loadMainItem(key) {
+      activeImageKey = key;
+      selectedOverlayClassId = null; // Flush layer interactive view focus on image swapping
+      const targetData = imageDataset[key];
+
+      imageTitle.textContent = `${key}`;
+      imageTitle.style.display = 'block';
+      
+      if (!targetData.jsonData) {
+        try {
+          const res = await fetch(targetData.jsonUrl);
+          if (res.ok) targetData.jsonData = await res.json();
+        } catch(e) {
+          console.error(`Could not read JSON map metrics for segment sequence path: ${key}`, e);
+        }
+      }
+
+      loadedImageElement = new Image();
+      loadedImageElement.src = targetData.imgUrl;
+      loadedImageElement.onload = () => {
+        displayCanvas.width = loadedImageElement.width;
+        displayCanvas.height = loadedImageElement.height;
+        canvasContainer.style.display = 'block';
+        
+        buildClassControlList(targetData.jsonData);
+        applyAllColorAndOverlayDraws();
+      };
+    }
+
+    function buildClassControlList(jsonData) {
+      classButtonsContainer.innerHTML = '';
+      if (!jsonData || !jsonData.segments || jsonData.segments.length === 0) {
+        classButtonsContainer.innerHTML = '<div style="color:#555; font-size:0.85rem; padding: 10px;">No segment identifiers found inside coordinates payload.</div>';
+        return;
+      }
+
+      const activeClasses = {};
+      jsonData.segments.forEach(seg => {
+        activeClasses[seg.class_id] = seg.class_name;
+      });
+
+      const currentImgData = imageDataset[activeImageKey];
+
+      Object.keys(activeClasses).forEach(classId => {
+        // Initialize color state container exclusively within current active scope block array
+        if (!currentImgData.colorState[classId]) {
+          currentImgData.colorState[classId] = { active: false, hexColor: "#ff0055" };
+        }
+
+        const state = currentImgData.colorState[classId];
+        const row = document.createElement('div');
+        row.className = 'class-row';
+        row.setAttribute('data-class-id', classId);
+        if (selectedOverlayClassId == classId) row.classList.add('highlighted');
+
+        const label = document.createElement('div');
+        label.className = 'class-name-label';
+        label.textContent = activeClasses[classId];
+        row.appendChild(label);
+
+        // --- LAYER INTERACTIVE VISUAL OVERLAY WIRE ---
+        // Clicking row updates outline layer reference instantly without changing the picker settings
+        row.addEventListener('click', (e) => {
+          if (e.target.tagName.toLowerCase() === 'input' || e.target.classList.contains('reset-btn')) {
+             return; // Avoid triggering selection changes if micro-picker/reset button is clicked
+          }
+          
+          if (selectedOverlayClassId == classId) {
+            selectedOverlayClassId = null;
+            row.classList.remove('highlighted');
+          } else {
+            document.querySelectorAll('.class-row').forEach(r => r.classList.remove('highlighted'));
+            selectedOverlayClassId = classId;
+            row.classList.add('highlighted');
+          }
+          applyAllColorAndOverlayDraws();
+        });
+
+        const actionsWrapper = document.createElement('div');
+        actionsWrapper.className = 'control-actions';
+
+        const picker = document.createElement('input');
+        picker.type = 'color';
+        picker.value = state.hexColor;
+        
+        picker.addEventListener('input', (e) => {
+          currentImgData.colorState[classId].active = true;
+          currentImgData.colorState[classId].hexColor = e.target.value;
+          applyAllColorAndOverlayDraws();
+        });
+        actionsWrapper.appendChild(picker);
+
+        const resetBtn = document.createElement('button');
+        resetBtn.className = 'reset-btn';
+        resetBtn.innerHTML = '&#8634;'; 
+        
+        resetBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          currentImgData.colorState[classId].active = false;
+          picker.value = "#ff0055"; 
+          applyAllColorAndOverlayDraws();
+        });
+        actionsWrapper.appendChild(resetBtn);
+
+        row.appendChild(actionsWrapper);
+        classButtonsContainer.appendChild(row);
+      });
+    }
+
+    function applyAllColorAndOverlayDraws() {
+      if (!loadedImageElement) return;
+
+      const ctx = displayCanvas.getContext('2d');
+      const w = displayCanvas.width;
+      const h = displayCanvas.height;
+
+      // Render clean background template frame
+      ctx.drawImage(loadedImageElement, 0, 0, w, h);
+
+      const targetData = imageDataset[activeImageKey];
+      if (!targetData || !targetData.jsonData) return;
+
+      const maskCanvas = document.createElement('canvas');
+      maskCanvas.width = w;
+      maskCanvas.height = h;
+      const maskCtx = maskCanvas.getContext('2d');
+
+      // --- RENDER PASS 1: APPLY ALL LAYER COLORS MODIFICATIONS ---
+      Object.keys(targetData.colorState).forEach(classId => {
+        const itemState = targetData.colorState[classId];
+        if (!itemState.active) return; 
+
+        const segments = targetData.jsonData.segments.filter(s => s.class_id == classId);
+        if (segments.length === 0) return;
+
+        maskCtx.clearRect(0, 0, w, h);
+        maskCtx.fillStyle = "black";
+
+        segments.forEach(segment => {
+          if (!segment.points || segment.points.length === 0) return;
+          maskCtx.beginPath();
+          maskCtx.moveTo(segment.points[0][0], segment.points[0][1]);
+          for (let i = 1; i < segment.points.length; i++) {
+            maskCtx.lineTo(segment.points[i][0], segment.points[i][1]);
+          }
+          maskCtx.closePath();
+          maskCtx.fill();
+        });
+
+        const hexColor = itemState.hexColor;
+        const targetR = parseInt(hexColor.slice(1, 3), 16);
+        const targetG = parseInt(hexColor.slice(3, 5), 16);
+        const targetB = parseInt(hexColor.slice(5, 7), 16);
+        const [targetH, targetS, targetV] = rgbToHsv(targetR, targetG, targetB);
+
+        const imgData = ctx.getImageData(0, 0, w, h);
+        const maskData = maskCtx.getImageData(0, 0, w, h);
+        const pixels = imgData.data;
+        const maskPixels = maskData.data;
+
+        let totalH = 0, totalS = 0, totalV = 0, count = 0;
+        for (let i = 0; i < pixels.length; i += 4) {
+          if (maskPixels[i + 3] > 0) {
+            const [h, s, v] = rgbToHsv(pixels[i], pixels[i+1], pixels[i+2]);
+            totalH += h; totalS += s; totalV += v;
+            count++;
+          }
+        }
+
+        if (count === 0) return;
+        const avgV = totalV / count;
+        const vShift = targetV - avgV;
+
+        for (let i = 0; i < pixels.length; i += 4) {
+          if (maskPixels[i + 3] > 0) {
+            const [origH, origS, origV] = rgbToHsv(pixels[i], pixels[i+1], pixels[i+2]);
+
+            let newH = targetH;
+            let newS = targetS;
+            let newV = Math.max(0, Math.min(100, origV + vShift));
+
+            if (targetV > 70 && origV < 20) {
+               newV = Math.max(newV, targetV * (origV / 20) * 0.8 + (targetV * 0.2));
+            }
+
+            const [newR, newG, newB] = hsvToRgb(newH, newS, newV);
+            pixels[i]     = newR;
+            pixels[i + 1] = newG;
+            pixels[i + 2] = newB;
+          }
+        }
+        ctx.putImageData(imgData, 0, 0);
+      });
+
+      // --- RENDER PASS 2: RENDER INTERACTIVE VISUAL BOUNDS OVERLAY OVER BOTH LAYERS ---
+      if (selectedOverlayClassId !== null) {
+        const segmentsToDraw = targetData.jsonData.segments.filter(s => s.class_id == selectedOverlayClassId);
+        
+        segmentsToDraw.forEach(segment => {
+          if (!segment.points || segment.points.length === 0) return;
+          
+          ctx.beginPath();
+          ctx.moveTo(segment.points[0][0], segment.points[0][1]);
+          for (let i = 1; i < segment.points.length; i++) {
+            ctx.lineTo(segment.points[i][0], segment.points[i][1]);
+          }
+          ctx.closePath();
+
+          // Fill with bright semi-transparent overlay
+          ctx.fillStyle = "rgba(0, 255, 255, 0.25)";
+          ctx.fill();
+
+          // Stroke crisp border line
+          ctx.strokeStyle = "#00ffff";
+          ctx.lineWidth = Math.max(2, w / 400);
+          ctx.stroke();
+        });
+      }
+    }
+
+    downloadImageBtn.addEventListener('click', () => {
+      if (!activeImageKey || !loadedImageElement) {
+        alert("Select an image target frame first.");
+        return;
+      }
+      
+      // Temporarily clear drawing layer paths so the user downloads clean edits without cyan line bounds overlaying them
+      const preservedSelectedOverlayId = selectedOverlayClassId;
+      selectedOverlayClassId = null;
+      applyAllColorAndOverlayDraws();
+
+      const dataUrl = displayCanvas.toDataURL("image/png");
+      
+      // Restore view state
+      selectedOverlayClassId = preservedSelectedOverlayId;
+      applyAllColorAndOverlayDraws();
+
+      const tempDownloadLink = document.createElement('a');
+      tempDownloadLink.download = `${activeImageKey}_colorized.png`;
+      tempDownloadLink.href = dataUrl;
+      document.body.appendChild(tempDownloadLink);
+      tempDownloadLink.click();
+      document.body.removeChild(tempDownloadLink);
+    });
+  </script>
+</body>
+</html>
