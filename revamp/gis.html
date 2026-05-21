@@ -107,7 +107,7 @@
           <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#portfolio">Project Portfolio</a></li>
-            <li class="current">Glass Inspection Remodelling</li>
+            <li class="current">Display Glass Inspection Remodelling</li>
           </ol>
         </nav>
       </div>
@@ -127,11 +127,17 @@
                   <span class="year">2024</span>
                 </div>
                 <h1 class="project-title">Glass Inspection Remodelling</h1>
-                <p class="project-summary">Glass Panel Crack, Scratch Detection System. Crack, Scratch Detection System Remodelling.</p>
+                <p class="project-summary">The <span class="accent-text">Display Glass Inspection System</span> is the flagship product used across multiple <span class="accent-text">Samsung Display, LG Display, and TCL factories worldwide</span>. Originally built as a monolithic application, it suffered from runtime instability and maintenance challenges. The system was redesigned into a <span class="accent-text">distributed architecture</span> using MQTT messaging, dramatically improving reliability, scalability, and client satisfaction.</p>
                 <div class="project-tags">
-                  <span class="tag">Re-Model</span>
-                  <span class="tag">Re-Design</span>
-                  <span class="tag">Process Improvement</span>
+                  <span class="tag">Display Glass Inspection</span>
+                  <span class="tag">Distributed System</span>
+                  <span class="tag">MQTT Messaging</span>
+                  <span class="tag">System Redesign</span>
+                  <span class="tag">Industrial Automation</span>
+                  <span class="tag">Fault Isolation</span>
+                  <span class="tag">Software Architecture</span>
+                  <span class="tag">Reliability Engineering</span>
+                  <span class="tag">Client Support Optimization</span>
                 </div>
               </div>
             </div>
@@ -165,54 +171,67 @@
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
               <div class="main-content ">
                 <h2>Project Description</h2>
-                <p>This system automates pallet alignment for forklift operations using a 3D vision‑based approach. It integrates <span class="accent-text">YOLOv4‑Tiny</span> for object detection and <span class="accent-text">RealSense depth sensing</span> to compute spatial alignment between pallet planes. The <span class="accent-text">GuideFinder</span> module calculates roll, pitch, and yaw deviations, providing real‑time feedback to the operator through visual overlays and alignment metrics.</p>
-                <p>This innovation reduced manual adjustment time by <span class="accent-text">2 hours per vehicle</span>, saving <span class="accent-text">millions of labor hours annually</span> and improving operational accuracy and safety in industrial logistics.</p>
+                <p>We transformed the legacy monolithic inspection system into a <span class="accent-text">modular, distributed architecture</span> with clear cohesion and coupling between components. 
+                  The previous implementation relied on a <span class="accent-text">single, lengthy function</span> that handled all operations, making debugging and maintenance extremely difficult. 
+                  By decomposing the system into <span class="accent-text">independent modules</span> communicating via MQTT, we achieved <span class="accent-text">real‑time fault isolation</span> and <span class="accent-text">improved traceability</span>. 
+                  The system can be deployed in <span class="accent-text">a single</span> or <span class="accent-text">multiple</span> machines with flexibility to assign different components to the <span class="accent-text">same</span> or <span class="accent-text">different</span> PCs.</p>
+                <p>The new design enables <span class="accent-text">each subsystem to operate autonomously</span> while exchanging messages through a lightweight broker. This allows precise error reporting and faster recovery from failures. As a result, <span class="accent-text">service‑level complaints dropped significantly, and client support became more efficient and transparent</span>. </p>
+                <h5>Key Features:</h5>
+                  <ul>
+                    <li>Modular distributed architecture replacing monolithic design</li>
+                    <li>MQTT‑based inter‑component communication</li>
+                    <li>Real‑time error detection and reporting</li>
+                    <li>Improved maintainability and scalability</li>
+                    <li>Mask‑based and mask‑less warping modes</li>
+                    <li>90% reduction in client support requests</li>
+                    <li>70% reduction in on‑site service visits</li>
+                  </ul>
+                  <p>The redesigned system became the core operational model for global deployments at <span class="accent-text">Samsung Display, LG Display, and TCL factories</span>. It earned internal recognition for engineering excellence and was documented in a technical white paper outlining the transition from monolithic to distributed architecture.</p>
               </div>
             </div>
             <div class="col-lg-4 offset-lg-1" data-aos="fade-up" data-aos-delay="200">
               <div class="project-specs">
                 <div class="spec-item">
                   <h5>Client</h5>
-                  <p>Hyundai Motor Corporation</p>
+                  <p>Han-Mech Controls Ltd.</p>
                 </div>
                 <div class="spec-item">
                   <h5>Timeline</h5>
-                  <p>5 Months</p>
+                  <p>8 Months</p>
                 </div>
                 <div class="spec-item">
                   <h5>My Role</h5>
-                  <p>R&D, Implementation</p>
+                  <p>Redesign and Implementation</p>
                 </div>
                 <div class="spec-item">
                   <h5>Team</h5>
-                  <p>1 Member</p>
+                  <p>3 Members</p>
                 </div>
                 <div class="spec-item">
                   <h5>Deliverables</h5>
-                  <p>QT Based 3D Guidance System</p>
+                  <p>Redesigned distributed inspection system</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        
         <div class="tools-section" data-aos="fade-up" data-aos-delay="100">
           <div class="row align-items-center">
             <div class="col-lg-5">
               <h2>Tools &amp; Technologies</h2>
-              <p>The system architecture employs a real‑time AI‑driven vision stack optimized for industrial precision and scalability. It combines deep learning inference, 3D spatial analysis, and modular service orchestration to deliver high‑speed detection and alignment feedback. Built with lightweight Python microservices and GPU‑accelerated frameworks, the design ensures low‑latency performance, seamless integration with existing factory systems, and maintainable deployment across production environments.</p>
+              <p>The system was rebuilt using modern communication and architecture frameworks. MQTT served as the backbone for message exchange, while modular design principles ensured high cohesion and low coupling. Logging and error‑handling mechanisms were integrated to provide detailed diagnostic feedback, enabling faster troubleshooting and remote support.</p>
             </div>
             <div class="col-lg-6 offset-lg-1">
               <div class="tools-grid">
                 <div class="tool-category" data-aos="fade-up" data-aos-delay="200">
                   <h5>Software/Tools</h5>
                   <div class="tool-list">
-                    <span class="tool-item">Python</span>
-                    <span class="tool-item">OpenCV</span>
-                    <span class="tool-item">YOLO Tiny</span>
-                    <span class="tool-item">Open3D</span>
-                    <span class="tool-item">QT</span> 
+                    <span class="tool-item">MQTT Messaging Framework</span>
+                    <span class="tool-item">C#</span>
+                    <span class="tool-item">Modular Architecture Design</span>
+                    <span class="tool-item">Distributed Systems</span>
+                    <span class="tool-item">Logging and Error‑Handling Frameworks</span> 
+                    <span class="tool-item">Industrial Automation Interfaces</span>
                   </div>
                 </div>
               </div>
@@ -221,7 +240,7 @@
         </div>
 
         <div class="impact-metrics" data-aos="fade-up" data-aos-delay="100">
-          <div class="metrics-container">
+          <div class="metrics-container d-none">
             <div class="metrics-header">
               <h2>Project Output</h2>
               <!--p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p-->

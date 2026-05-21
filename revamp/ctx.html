@@ -127,11 +127,17 @@
                   <span class="year">2023</span>
                 </div>
                 <h1 class="project-title">Cloth Color Transfer System</h1>
-                <p class="project-summary">Advanced cloth color transfer technology for fashion industry applications.</p>
+                <p class="project-summary">The <span class="accent-text">Cloth Color Transfer</span> project introduces an intelligent system that enables fashion outlets to digitally change the color of garments in pre‑shoot model images. By eliminating the need for multiple photoshoots for each color variant, the system reduces production costs by approximately 50% per model shoot, streamlining the workflow for e‑commerce and fashion photography.</p>
                 <div class="project-tags">
-                  <span class="tag">Hyundai Motors</span>
-                  <span class="tag">Sustainability</span>
-                  <span class="tag">Platform</span>
+                  <span class="tag">Cloth Color Transfer</span>
+                  <span class="tag">Fashion Technology</span>
+                  <span class="tag">Image Segmentation</span>
+                   <span class="tag">CRF Enhancement</span>
+                  <span class="tag">Deep Learning</span>
+                  <span class="tag">Cost Optimization</span>
+                   <span class="tag">TensorFlow</span>
+                  <span class="tag">Flask Web Service</span>
+                  <span class="tag">Next.js Interface</span>
                 </div>
               </div>
             </div>
@@ -143,7 +149,7 @@
           </div>
         </div>
 
-        <div class="visual-showcase" data-aos="fade-up" data-aos-delay="100">
+        <div class="visual-showcase d-none" data-aos="fade-up" data-aos-delay="100">
           
           <div class="showcase-gallery">
             <div class="gallery-item large" data-aos="zoom-in" data-aos-delay="150">
@@ -165,31 +171,41 @@
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
               <div class="main-content ">
                 <h2>Project Description</h2>
-                <p>This system automates pallet alignment for forklift operations using a 3D vision‑based approach. It integrates <span class="accent-text">YOLOv4‑Tiny</span> for object detection and <span class="accent-text">RealSense depth sensing</span> to compute spatial alignment between pallet planes. The <span class="accent-text">GuideFinder</span> module calculates roll, pitch, and yaw deviations, providing real‑time feedback to the operator through visual overlays and alignment metrics.</p>
-                <p>This innovation reduced manual adjustment time by <span class="accent-text">2 hours per vehicle</span>, saving <span class="accent-text">millions of labor hours annually</span> and improving operational accuracy and safety in industrial logistics.</p>
+                <p>I contributed in a <span class="accent-text">CIHP‑PGN‑based segmentation network</span> to accurately identify body parts and clothing regions in model images. The segmentation output is refined using <span class="accent-text">Conditional Random Field (CRF)</span> enhancement, incorporating user feedback for improved precision.</p>
+                <p>A <span class="accent-text">Next.js‑based user interface</span> allows users to select specific clothing segments (e.g., upper garment, bottom garment) and change their colors interactively using a color picker. This approach enables fashion companies to photograph only one variant of each product and digitally generate all other color options, saving both time and model fees.</p>
+                <h5>Key Features Delivered:</h5>
+                <ul>
+                  <li>Near real‑time inference pipeline (23s → 2s)</li>
+                  <li>Placeholder configuration for image resizing</li>
+                  <li>Correct label preservation using PIL resize</li>
+                  <li>Automatic class merging (e.g., outer + dress, pants + skirt)</li>
+                  <li>Boundary optimization using CRF (with noted limitations)</li>
+                  <li>Accuracy ~73% on test datasets</li>
+                  <li>Manual adjustment support for complex textures or patterns</li>
+                </ul>
               </div>
             </div>
             <div class="col-lg-4 offset-lg-1" data-aos="fade-up" data-aos-delay="200">
               <div class="project-specs">
                 <div class="spec-item">
                   <h5>Client</h5>
-                  <p>Hyundai Motor Corporation</p>
+                  <p>Style AI Inc.</p>
                 </div>
                 <div class="spec-item">
                   <h5>Timeline</h5>
-                  <p>5 Months</p>
+                  <p>4 Months</p>
                 </div>
                 <div class="spec-item">
                   <h5>My Role</h5>
-                  <p>R&D, Implementation</p>
+                  <p>Service Implementation</p>
                 </div>
                 <div class="spec-item">
                   <h5>Team</h5>
-                  <p>1 Member</p>
+                  <p>2 Members</p>
                 </div>
                 <div class="spec-item">
                   <h5>Deliverables</h5>
-                  <p>QT Based 3D Guidance System</p>
+                  <p>Segmentation Service</p>
                 </div>
               </div>
             </div>
@@ -201,18 +217,22 @@
           <div class="row align-items-center">
             <div class="col-lg-5">
               <h2>Tools &amp; Technologies</h2>
-              <p>The system architecture employs a real‑time AI‑driven vision stack optimized for industrial precision and scalability. It combines deep learning inference, 3D spatial analysis, and modular service orchestration to deliver high‑speed detection and alignment feedback. Built with lightweight Python microservices and GPU‑accelerated frameworks, the design ensures low‑latency performance, seamless integration with existing factory systems, and maintainable deployment across production environments.</p>
+              <p>Our system combines deep learning, web development, and interactive design. The segmentation and enhancement pipeline runs on TensorFlow, while Flask serves as the communication bridge between the model and the web interface. The Next.js front‑end provides a responsive, user‑friendly environment for color manipulation and feedback collection.</p>
             </div>
             <div class="col-lg-6 offset-lg-1">
               <div class="tools-grid">
                 <div class="tool-category" data-aos="fade-up" data-aos-delay="200">
                   <h5>Software/Tools</h5>
                   <div class="tool-list">
+                    <span class="tool-item">TensorFlow</span>
+                    <span class="tool-item">Flask</span>
+                    <span class="tool-item">Next.js</span>
                     <span class="tool-item">Python</span>
-                    <span class="tool-item">OpenCV</span>
-                    <span class="tool-item">YOLO Tiny</span>
-                    <span class="tool-item">Open3D</span>
-                    <span class="tool-item">QT</span> 
+                    <span class="tool-item">JavaScript</span> 
+                    <span class="tool-item">HTML/CSS</span>
+                    <span class="tool-item">CRF (Conditional Random Field)</span>
+                    <span class="tool-item">CIHP‑PGN Network</span>
+                    <span class="tool-item">RESTful APIs</span>
                   </div>
                 </div>
               </div>

@@ -17,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
-  
+
   <!-- Vendor CSS Files -->
   <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -113,7 +113,7 @@
       </div>
     </div><!-- End Page Title -->
 
-     <!-- Portfolio Details Section -->
+    <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -127,17 +127,29 @@
                   <span class="year">2024</span>
                 </div>
                 <h1 class="project-title">Metal Crack Detection System</h1>
-                <p class="project-summary">Automated system for detecting cracks in metal separator for hydrogen fuel cells.</p>
+                <p class="project-summary">The <span class="accent-text">Metal Crack Detection System</span> is a
+                  patented solution designed to identify micro‑level defects in hydrogen fuel cell separators. These
+                  separators have shiny, patterned, and uneven surfaces that make traditional lighting and inspection
+                  methods ineffective. By innovating with upward light projection in a darkroom enclosure and a
+                  multi‑camera rig, the system achieves highly accurate defect detection in under 30 seconds per
+                  separator.</p>
                 <div class="project-tags">
-                  <span class="tag">Hyundai Motors</span>
+                  <span class="tag">Metal Crack Detection</span>
+                  <span class="tag">Hydrogen Fuel Cell Separators</span>
+                  <span class="tag">Industrial Inspection</span>
+                  <span class="tag">Multi‑Camera Rig</span>
+                  <span class="tag">Upward Lighting Technique</span>
+                  <span class="tag">Motion Table Scanning</span>
+                  <span class="tag">Computer Vision</span>
                   <span class="tag">OpenCV</span>
-                  <span class="tag">Cognex Vision Pro, Cognex Deep Learning</span>
+                  <span class="tag">C#</span>
                 </div>
               </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
               <div class="hero-image">
-                <img src="assets/img/portfolio/mcf.webp" alt="Metal Crack Detection System" class="img-fluid" loading="lazy">
+                <img src="assets/img/portfolio/mcf.webp" alt="Metal Crack Detection System" class="img-fluid"
+                  loading="lazy">
               </div>
             </div>
           </div>
@@ -149,10 +161,12 @@
               <img src="assets/img/portfolio/dy_dash.webp" alt="Dashboard" class="img-fluid glightbox">
             </div>
             <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/portfolio/dy_recipe.webp" alt="Setting up recipe for inspection" class="img-fluid glightbox">
+              <img src="assets/img/portfolio/dy_recipe.webp" alt="Setting up recipe for inspection"
+                class="img-fluid glightbox">
             </div>
             <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
-              <img src="assets/img/portfolio/dy_try.webp" alt="Configuration Playground to adjust algorithms & parameters" class="img-fluid glightbox">
+              <img src="assets/img/portfolio/dy_try.webp"
+                alt="Configuration Playground to adjust algorithms & parameters" class="img-fluid glightbox">
             </div>
           </div>
         </div>
@@ -160,22 +174,24 @@
         <div class="content-section">
           <div class="row">
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-              <div class="main-content">
+              <div class="main-content ">
                 <h2>Project Description</h2>
-                <p>I engineered a deep learning–powered metal crack detection system that dramatically outperforms conventional solutions in both speed and efficiency. While competitors rely on 16 cameras, our design achieves superior accuracy with only 3 cameras, reducing hardware complexity and inspection time by 120 seconds per trim. This translates to a 90‑second savings per door trim, delivering measurable productivity gains on the assembly line.</p>
-                <p>The system integrates Cognex Vision Plus, Cognex Deep Learning, and custom OpenCV algorithms to detect critical assembly features, including:</p>
+                <p>We engineered a novel inspection pipeline that overcame the challenges posed by shiny, zigzag patterned metal surfaces. Instead of conventional lighting, we projected light upward from beneath the separator in a closed darkroom enclosure. 
+                  This allowed holes or cracks to be clearly visible to cameras positioned below. 
+                  To ensure comprehensive coverage, we deployed a  <span class="accent-text">five‑camera rig</span>: one central camera for frontal inspection and four angled at 45° inward to detect defects invisible from a straight view.</p>
+                <p>
+                  The system incorporated a <span class="accent-text">motion table</span>to slide the separator in x‑y coordinates, scanning the entire surface patch by patch. Each patch was analyzed at the image level to localize defects. This approach enabled detection of micro‑holes and cracks with high precision. The inspection process was optimized to complete within <span class="accent-text">30 seconds per separator</span>, making it suitable for industrial deployment.
+                </p>
+                <h5>Key Features Delivered:</h5>
                 <ul>
-                  <li>Screw bolting</li>
-                  <li>Plug bolt melting</li>
-                  <li>Leadwire connections</li>
-                  <li>Padding placement</li>
-                  <li>Speaker model verification</li>
-                  <li>Option Buttons Available in the Door</li>
-                  <li>Trim color correctness</li>
+                  <li>Upward light projection in darkroom enclosure</li>
+                  <li>Five‑camera rig (1 frontal + 4 angled)</li>
+                  <li>Motion table for x‑y scanning</li>
+                  <li>Patch‑based defect localization</li>
+                  <li>Micro‑level crack and hole detection</li>
+                  <li>30‑second inspection cycle per separator</li>
                 </ul>
-                <p>All algorithms are scalable and configurable, allowing users to adjust parameters directly through the software interface. The platform supports all door trim variations and enables multi‑recipe management, meaning new car models or design changes can be accommodated simply by selecting the appropriate recipe. This flexibility ensures seamless adaptation to evolving production requirements without costly reconfiguration.</p>
-                <p>By combining computer vision, deep learning, and smart inspection mechanisms, the system delivers a robust, future‑proof solution that reduces hardware needs, accelerates inspection cycles, and enhances quality assurance for automotive manufacturing.</p>
-
+                <p>The project resulted in a patent for the innovative inspection methodology. It became a cornerstone technology for hydrogen fuel cell separator quality assurance, recognized for its speed and accuracy. The system was validated in industrial environments and certified for commercialization, ensuring reliable defect detection in production lines.</p>
               </div>
             </div>
             <div class="col-lg-4 offset-lg-1" data-aos="fade-up" data-aos-delay="200">
@@ -186,19 +202,19 @@
                 </div>
                 <div class="spec-item">
                   <h5>Timeline</h5>
-                  <p>12 Months</p>
+                  <p>6 Months</p>
                 </div>
                 <div class="spec-item">
                   <h5>My Role</h5>
-                  <p>R&amp;D, Software Design, Implementation</p>
+                  <p>Software Design, Implementation</p>
                 </div>
                 <div class="spec-item">
                   <h5>Team</h5>
-                  <p>4 Member</p>
+                  <p>2 Member</p>
                 </div>
                 <div class="spec-item">
                   <h5>Deliverables</h5>
-                  <p>WPF Application with PLC Communication</p>
+                  <p>Desktop Application</p>
                 </div>
               </div>
             </div>
@@ -215,11 +231,16 @@
                 <span class="step-number"></span>
               </div>
               <div class="step-content">
-                <h4><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07082982">Personal Omni-view Broadcasting System : a Full Open Source Approach</a></h4>
-                <p>Omni-view or 360° video provides realistic/virtual experience to the viewers. However the cost and construction difficulty of panorama broadcasting is an obstacle for personal broadcasting service. In the paper, we integrate a full stack open-source solution for capture, broadcast and display of panoramic videos. The total cost is just less than 400 USD for fisheye camera, RICOH Theta S 360°, and one or two personal PC/laptop of typical programmer spec.</p>
+                <h4><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07082982">Personal Omni-view
+                    Broadcasting System : a Full Open Source Approach</a></h4>
+                <p>Omni-view or 360° video provides realistic/virtual experience to the viewers. However the cost and
+                  construction difficulty of panorama broadcasting is an obstacle for personal broadcasting service. In
+                  the paper, we integrate a full stack open-source solution for capture, broadcast and display of
+                  panoramic videos. The total cost is just less than 400 USD for fisheye camera, RICOH Theta S 360°, and
+                  one or two personal PC/laptop of typical programmer spec.</p>
               </div>
             </div>
-              
+
             <!--div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
               <div class="step-marker">
                 <span class="step-number">2</span>
@@ -254,25 +275,24 @@
           <div class="row align-items-center">
             <div class="col-lg-5">
               <h2>Tools &amp; Technologies</h2>
+              <p>
+                We combined computer vision techniques with mechanical automation to deliver a robust inspection system. 
+                <span class="accent-text">OpenCV</span> was used for image processing and defect localization, while <span class="accent-text">C#</span> provided the application framework for system control and integration. 
+                The hardware setup included a motion table, multi‑camera rig, and specialized lighting enclosure, all orchestrated to achieve synchronized inspection.
+              </p>
             </div>
             <div class="col-lg-6 offset-lg-1">
               <div class="tools-grid">
-                <div class="tool-category" data-aos="fade-up" data-aos-delay="150">
-                  <h5>Hardware</h5>
-                  <div class="tool-list">
-                    <span class="tool-item">HikVision Camera</span>
-                    <span class="tool-item">LS Tech PLC</span>
-                    <span class="tool-item">Non-reflectiove Light</span>
-                    <span class="tool-item">Zebra Barcode Scanner</span>
-                  </div>
-                </div>
                 <div class="tool-category" data-aos="fade-up" data-aos-delay="200">
                   <h5>Software/Tools</h5>
                   <div class="tool-list">
-                    <span class="tool-item">WPF C#</span>
+                    <span class="tool-item">C#</span>
                     <span class="tool-item">OpenCV</span>
-                    <span class="tool-item">Cognex Vision Pro</span>
-                    <span class="tool-item">Cognex Deep Learning</span>
+                    <span class="tool-item">Multi‑Camera Rig</span>
+                    <span class="tool-item">Motion Table Automation</span>
+                      <span class="tool-item">Image Processing Algorithms</span>
+                    <span class="tool-item">Industrial Lighting Enclosure</span>
+                    <span class="tool-item">Computer Vision Frameworks</span>
                   </div>
                 </div>
               </div>
@@ -282,14 +302,13 @@
 
         <div class="impact-metrics" data-aos="fade-up" data-aos-delay="100">
           <div class="metrics-container">
-            <div class="metrics-header">
+            <div class="metrics-header d-none">
               <h2>Project Output</h2>
               <!--p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p-->
               <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-                <iframe src="https://www.youtube.com/embed/e7tPkKbj55o?si=BVaHVvutrdzfMX8B" 
-                  style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                  encrypted-media; gyroscope; picture-in-picture; web-share" 
+                <iframe src="https://www.youtube.com/embed/e7tPkKbj55o?si=BVaHVvutrdzfMX8B"
+                  style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                  encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
               </div>
@@ -313,9 +332,9 @@
               </div>
             </div>
           </div-->
-        </div>
+          </div>
 
-        <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
+          <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
           <div class="gallery-slider swiper init-swiper">
             <script type="application/json" class="swiper-config">
               {
@@ -359,34 +378,34 @@
           </div>
         </div-->
 
-        <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
-          <div class="nav-wrapper">
-            <a href="ev.html" class="nav-link prev-project">
-              <div class="nav-content">
-                <span class="nav-direction">← Previous</span>
-                <span class="nav-title">2D + 3D EV‑Battery Robotic Bolting</span>
-              </div>
-            </a>
-            <a href="index.html#portfolio" class="nav-link all-projects">
-              <i class="bi bi-grid-3x3-gap"></i>
-              <span>All Projects</span>
-            </a>
-            <a href="gis.html" class="nav-link next-project">
-              <div class="nav-content">
-                <span class="nav-direction">Next →</span>
-                <span class="nav-title">Glass Inspection Remodelling</span>
-              </div>
-            </a>
+          <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
+            <div class="nav-wrapper">
+              <a href="ev.html" class="nav-link prev-project">
+                <div class="nav-content">
+                  <span class="nav-direction">← Previous</span>
+                  <span class="nav-title">2D + 3D EV‑Battery Robotic Bolting</span>
+                </div>
+              </a>
+              <a href="index.html#portfolio" class="nav-link all-projects">
+                <i class="bi bi-grid-3x3-gap"></i>
+                <span>All Projects</span>
+              </a>
+              <a href="gis.html" class="nav-link next-project">
+                <div class="nav-content">
+                  <span class="nav-direction">Next →</span>
+                  <span class="nav-title">Glass Inspection Remodelling</span>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
 
-      </div>
+        </div>
 
     </section><!-- /Portfolio Details Section -->
 
   </main>
 
-   <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Meer Sadeq Billah</h3>
       <p>AI APPLICATION DEVELOPER • COMPUTER VISION INTEGRATOR • 18+ YEARS • 100+ PROJECTS</p>
@@ -398,7 +417,8 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights
+            Reserved</span>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
@@ -413,7 +433,8 @@
 
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

@@ -96,8 +96,7 @@
     </div>
   </header>
 
-  <main class="main dark-ba">
-
+  <main class="main dark-background">
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
@@ -114,7 +113,7 @@
                  <span class="accent-text">19-Year Full-Stack Career</span> including a decade in <span class="accent-text">Computer Vision & Image Processing</span>              
                 </p-->
               
-                 <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+              <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
                 <a href="#portfolio" class="btn-primary">View My Work</a>
                 <a href="#contact" class="btn-secondary">Get In Touch</a>
               </div>
@@ -963,11 +962,12 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <div class="isotope-layout" data-default-filter=".filter-featured" data-layout="masonry" data-sort="original-order">
 
           <div class="filters-wrapper" data-aos="fade-up" data-aos-delay="200">
             <ul class="portfolio-filters isotope-filters">
-              <li data-filter="*" class="filter-active">All Work</li>
+              <li data-filter="*">All Work</li>
+              <li data-filter=".filter-featured" class="filter-active">Featured Works</li>
               <li data-filter=".filter-vanalytics">Analytics</li>
               <li data-filter=".filter-indsys">Industrial Automation</li>
               <li data-filter=".filter-cvip">Computer Vision  & Image Processing</li>
@@ -977,7 +977,7 @@
           </div>
 
           <div class="row gy-5 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="300">
-            <div class="col-lg-4 portfolio-item isotope-item filter-vanalytics">
+            <div class="col-lg-4 portfolio-item isotope-item filter-vanalytics filter-featured">
               <div class="portfolio-card">
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/glass.webp" class="img-fluid" alt="Display Surface Anomaly Detection" loading="lazy">
@@ -999,7 +999,7 @@
               </div>
             </div><!-- End Portfolio Item -->
           
-            <div class="col-lg-4 portfolio-item isotope-item filter-indsys">
+            <div class="col-lg-4 portfolio-item isotope-item filter-indsys filter-featured">
               <div class="portfolio-card">
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/3dalign.webp" class="img-fluid" alt="3D Pallet Alignment System" loading="lazy">
@@ -1021,7 +1021,7 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 portfolio-item isotope-item filter-indsys">
+            <div class="col-lg-4 portfolio-item isotope-item filter-indsys filter-featured">
               <div class="portfolio-card">
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/doortrim.webp" class="img-fluid" alt="Door Trim Inspection System" loading="lazy">
@@ -1171,7 +1171,7 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 portfolio-item isotope-item filter-cvip">
+            <div class="col-lg-4 portfolio-item isotope-item filter-cvip filter-featured">
               <div class="portfolio-card">
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/ct.webp" class="img-fluid" alt="Cloth Color Transfer" loading="lazy">
@@ -1237,7 +1237,7 @@
               </div>
             </div--><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 portfolio-item isotope-item filter-sur">
+            <div class="col-lg-4 portfolio-item isotope-item filter-sur filter-featured">
               <div class="portfolio-card">
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/mtrack.webp" class="img-fluid" alt="Map Based Surveillance" loading="lazy">
@@ -1369,7 +1369,7 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 portfolio-item isotope-item filter-cvip">
+            <div class="col-lg-4 portfolio-item isotope-item filter-cvip filter-featured">
               <div class="portfolio-card">
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/stitch.webp" class="img-fluid" alt="Video Stitching" loading="lazy">
@@ -1391,7 +1391,7 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 portfolio-item isotope-item filter-misc">
+            <div class="col-lg-4 portfolio-item isotope-item filter-misc ">
               <div class="portfolio-card">
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/360.webp" class="img-fluid" alt="360&deg; Video Streaming" loading="lazy">
@@ -1477,7 +1477,7 @@
                 </div>
               </div>
             </div><!-- End Portfolio Item -->  
-            <div class="col-lg-4 portfolio-item isotope-item filter-misc">
+            <div class="col-lg-4 portfolio-item isotope-item filter-misc filter-featured">
               <div class="portfolio-card">
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/E2202.webp" class="img-fluid" alt="Samsung Phone Platform Customization" loading="lazy">
@@ -1521,7 +1521,7 @@
               </div>
             </div><!-- End Portfolio Item -->  
 
-            <div class="col-lg-4 portfolio-item isotope-item filter-sur">
+            <div class="col-lg-4 portfolio-item isotope-item filter-sur ">
               <div class="portfolio-card">
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/incdnt.webp" class="img-fluid" alt="Cisco IP Interoperability and Collaboration System (IPICS) Mobile Client" loading="lazy">

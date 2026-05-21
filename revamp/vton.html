@@ -17,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
-  
+
   <!-- Vendor CSS Files -->
   <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -127,11 +127,22 @@
                   <span class="year">2022</span>
                 </div>
                 <h1 class="project-title">Virtual Try-On System</h1>
-                <p class="project-summary">Commercialization of Virtual try-on technology for online fashion shopping.</p>
+                <p class="project-summary">The <span class="accent-text">Multi‑Layer Try‑On Pipeline</span> is an
+                  advanced AI‑driven system that enables realistic virtual clothing visualization. It integrates
+                  segmentation, warping, and inpainting networks to simulate how garments fit and interact with human
+                  body poses. The pipeline supports both <span class="accent-text">tuck‑in</span> and <span
+                    class="accent-text">tuck‑out</span> views, ensuring natural layering and high visual fidelity for
+                  commercial fashion applications.</p>
                 <div class="project-tags">
-                  <span class="tag">Hyundai Motors</span>
-                  <span class="tag">Sustainability</span>
-                  <span class="tag">Platform</span>
+                  <span class="tag">Virtual Try‑On</span>
+                  <span class="tag">Cloth Warping</span>
+                  <span class="tag">Image Inpainting</span>
+                  <span class="tag">Pose Estimation</span>
+                  <span class="tag">CIHP‑PGN Segmentation</span>
+                  <span class="tag">Layered Clothing Simulation</span>
+                  <span class="tag">Computer Vision</span>
+                  <span class="tag">Deep Learning</span>
+                  <span class="tag">Fashion Technology</span>
                 </div>
               </div>
             </div>
@@ -144,7 +155,7 @@
         </div>
 
         <div class="visual-showcase" data-aos="fade-up" data-aos-delay="100">
-          
+
           <div class="showcase-gallery">
             <div class="gallery-item large" data-aos="zoom-in" data-aos-delay="150">
               <img src="assets/img/portfolio/e2e.webp" alt="End-to-End Process" class="img-fluid glightbox">
@@ -155,8 +166,8 @@
             <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
               <img src="assets/img/portfolio/data_comm.webp" alt="Data Communication" class="img-fluid glightbox">
             </div>
-             
-             
+
+
           </div>
         </div>
 
@@ -165,54 +176,91 @@
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
               <div class="main-content ">
                 <h2>Project Description</h2>
-                <p>This system automates pallet alignment for forklift operations using a 3D vision‑based approach. It integrates <span class="accent-text">YOLOv4‑Tiny</span> for object detection and <span class="accent-text">RealSense depth sensing</span> to compute spatial alignment between pallet planes. The <span class="accent-text">GuideFinder</span> module calculates roll, pitch, and yaw deviations, providing real‑time feedback to the operator through visual overlays and alignment metrics.</p>
-                <p>This innovation reduced manual adjustment time by <span class="accent-text">2 hours per vehicle</span>, saving <span class="accent-text">millions of labor hours annually</span> and improving operational accuracy and safety in industrial logistics.</p>
+                <p>We designed and implemented a multi‑stage pipeline that accurately models how clothes appear on a
+                  person under different configurations.
+                  The system begins with human body pose estimation to determine the spatial orientation of the model.
+                  Using <span class="accent-text">CIHP‑PGN segmentation</span>, we identify and separate clothing layers
+                  — outerwear, innerwear, and bottoms — ensuring precise control over each garment’s position and
+                  overlap.</p>
+                <p>
+                  Both <span class="accent-text">preserved‑mask</span> and <span class="accent-text">mask‑less
+                    operations</span> were explored for cloth warping, allowing flexibility in handling complex textures
+                  and shapes.
+                  The pipeline follows a logical sequence: detecting body pose, layering garments, performing warping
+                  transformations,
+                  and finally applying an <span class="accent-text">inpainting network</span> to refine edges and fill
+                  occluded regions for photorealistic output.
+                </p>
+                <h5>Key Features Delivered:</h5>
+                <ul>
+                  <li>Multi‑layer garment management (outer, inner, bottom)</li>
+                  <li>Tuck‑in and tuck‑out view generation</li>
+                  <li>Pose‑aware cloth alignment</li>
+                  <li>CIHP‑PGN segmentation for precise part detection</li>
+                  <li>Mask‑based and mask‑less warping modes</li>
+                  <li>Inpainting for seamless visual correction</li>
+                  <li>Almost commercial‑grade visual quality</li>
+                </ul>
+                <p>The project resulted in a <span class="accent-text">core algorithm</span> delivered to a partner
+                  company for commercialization.
+                  It served as the foundation for their virtual try‑on product line.
+                  A <span class="accent-text">technical paper</span> was prepared detailing the integration of
+                  segmentation, warping, and inpainting networks,
+                  and the project received <span class="accent-text">internal certification</span> for innovation in
+                  AI‑based fashion visualization.</p>
               </div>
             </div>
             <div class="col-lg-4 offset-lg-1" data-aos="fade-up" data-aos-delay="200">
               <div class="project-specs">
                 <div class="spec-item">
                   <h5>Client</h5>
-                  <p>Hyundai Motor Corporation</p>
+                  <p>Style AI Inc.</p>
                 </div>
                 <div class="spec-item">
                   <h5>Timeline</h5>
-                  <p>5 Months</p>
+                  <p>12 Months</p>
                 </div>
                 <div class="spec-item">
                   <h5>My Role</h5>
-                  <p>R&D, Implementation</p>
+                  <p>R&D</p>
                 </div>
                 <div class="spec-item">
                   <h5>Team</h5>
-                  <p>1 Member</p>
+                  <p>5 Member</p>
                 </div>
                 <div class="spec-item">
                   <h5>Deliverables</h5>
-                  <p>QT Based 3D Guidance System</p>
+                  <p>Core Algorithm for Virtual Try-On</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        
+
         <div class="tools-section" data-aos="fade-up" data-aos-delay="100">
           <div class="row align-items-center">
             <div class="col-lg-5">
               <h2>Tools &amp; Technologies</h2>
-              <p>The system architecture employs a real‑time AI‑driven vision stack optimized for industrial precision and scalability. It combines deep learning inference, 3D spatial analysis, and modular service orchestration to deliver high‑speed detection and alignment feedback. Built with lightweight Python microservices and GPU‑accelerated frameworks, the design ensures low‑latency performance, seamless integration with existing factory systems, and maintainable deployment across production environments.</p>
+              <p>The pipeline combines deep learning, computer vision, and image synthesis techniques. We used <span
+                  class="accent-text">PyTorch</span> for warping model training and inference, <span
+                  class="accent-text">OpenPose</span> for body pose estimation, and <span
+                  class="accent-text">Flask</span> for backend integration. The system was deployed through a modular
+                architecture that supports real‑time visualization and scalable commercial use.</p>
             </div>
             <div class="col-lg-6 offset-lg-1">
               <div class="tools-grid">
                 <div class="tool-category" data-aos="fade-up" data-aos-delay="200">
                   <h5>Software/Tools</h5>
                   <div class="tool-list">
+                    <span class="tool-item">PyTorch</span>
+                    <span class="tool-item">Flask</span>
                     <span class="tool-item">Python</span>
-                    <span class="tool-item">OpenCV</span>
-                    <span class="tool-item">YOLO Tiny</span>
-                    <span class="tool-item">Open3D</span>
-                    <span class="tool-item">QT</span> 
+                    <span class="tool-item">OpenPose</span>
+                    <span class="tool-item">CIHP‑PGN Network</span>
+                    <span class="tool-item">Image Inpainting Models</span>
+                    <span class="tool-item">RESTful APIs</span>
+                    <span class="tool-item">Computer Vision Frameworks</span>
                   </div>
                 </div>
               </div>
@@ -222,14 +270,13 @@
 
         <div class="impact-metrics" data-aos="fade-up" data-aos-delay="100">
           <div class="metrics-container">
-            <div class="metrics-header">
+            <div class="metrics-header d-none">
               <h2>Project Output</h2>
               <!--p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p-->
               <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-                <iframe src="https://www.youtube.com/embed/MrsO31NcMAI?si=eZiOmFnG4tOL6o1Y" 
-                  style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                  encrypted-media; gyroscope; picture-in-picture; web-share" 
+                <iframe src="https://www.youtube.com/embed/MrsO31NcMAI?si=eZiOmFnG4tOL6o1Y"
+                  style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                  encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
               </div>
@@ -253,9 +300,9 @@
               </div>
             </div>
           </div-->
-        </div>
+          </div>
 
-        <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
+          <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
           <div class="gallery-slider swiper init-swiper">
             <script type="application/json" class="swiper-config">
               {
@@ -299,34 +346,34 @@
           </div>
         </div-->
 
-        <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
-          <div class="nav-wrapper">
-            <a href="ctx.html" class="nav-link prev-project">
-              <div class="nav-content">
-                <span class="nav-direction">← Previous</span>
-                <span class="nav-title">Cloth Color Transfer System</span>
-              </div>
-            </a>
-            <a href="index.html#portfolio" class="nav-link all-projects">
-              <i class="bi bi-grid-3x3-gap"></i>
-              <span>All Projects</span>
-            </a>
-            <a href="mtracker.html" class="nav-link next-project">
-              <div class="nav-content">
-                <span class="nav-direction">Next →</span>
-                <span class="nav-title">Map Based Surveillance System</span>
-              </div>
-            </a>
+          <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
+            <div class="nav-wrapper">
+              <a href="ctx.html" class="nav-link prev-project">
+                <div class="nav-content">
+                  <span class="nav-direction">← Previous</span>
+                  <span class="nav-title">Cloth Color Transfer System</span>
+                </div>
+              </a>
+              <a href="index.html#portfolio" class="nav-link all-projects">
+                <i class="bi bi-grid-3x3-gap"></i>
+                <span>All Projects</span>
+              </a>
+              <a href="mtracker.html" class="nav-link next-project">
+                <div class="nav-content">
+                  <span class="nav-direction">Next →</span>
+                  <span class="nav-title">Map Based Surveillance System</span>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
 
-      </div>
+        </div>
 
     </section><!-- /Portfolio Details Section -->
 
   </main>
 
-   <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Meer Sadeq Billah</h3>
       <p>AI APPLICATION DEVELOPER • COMPUTER VISION INTEGRATOR • 18+ YEARS • 100+ PROJECTS</p>
@@ -338,7 +385,8 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights
+            Reserved</span>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
@@ -353,7 +401,8 @@
 
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
