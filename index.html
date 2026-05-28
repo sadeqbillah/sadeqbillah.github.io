@@ -37,6 +37,16 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PE5VSF539"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-9PE5VSF539');
+  </script>
+
 </head>
 
 <body class="index-page">
@@ -89,7 +99,7 @@
     </nav>
 
     <div class="social-links text-center">
-      <a href="mailto:sadeqbillah@gmail.com" class="email"><i class="bi bi-envelope"></i></a>
+      <a href="#" onclick="openMail(event)" class="email"><i class="bi bi-envelope"></i></a>
       <a href="tel:+821086984109" class="phone"><i class="bi bi-telephone"></i></a>
       <a href="https://github.com/sadeqbillah" target="_blank" class="github"><i class="bi bi-github"></i></a>
       <a href="https://linkedin.com/in/billahms" class="linkedin"><i class="bi bi-linkedin"></i></a>
@@ -2121,10 +2131,22 @@
                 </div>
                 <div class="detail-content">
                   <span class="detail-label">Email me</span>
-                  <span class="detail-value"><a href="mailto:sadeqbillah@gmail.com">sadeqbillah@gmail.com</a></span>
+                  <span class="detail-value" id="email-container">
+                    <a href="#" onclick="revealEmail(); return false;">Show Email</a>
+                  </span>
                 </div>
               </div>
+              <script>
+                function revealEmail() {
+                  // Base64 encoded "sadeqbillah@gmail.com"
+                  const encoded = "c2FkZXFiaWxsYWhAZ21haWwuY29t";
+                  const email = atob(encoded);
 
+                  // Replace the button with a mailto link
+                  const container = document.getElementById("email-container");
+                  container.innerHTML = `<a href="mailto:${email}">${email}</a>`;
+                }
+              </script>
               <div class="detail-item">
                 <div class="detail-icon">
                   <i class="bi bi-telephone-outbound"></i>
@@ -2140,7 +2162,7 @@
                   <i class="bi bi-geo-alt-fill"></i>
                 </div>
                 <div class="detail-content">
-                  <span class="detail-label">Visit us</span>
+                  <span class="detail-label">Visit me</span>
                   <span class="detail-value">H803 B106 Geomdan-ro 851<br>Incheon, South Korea</span>
                 </div>
               </div>
@@ -2194,7 +2216,7 @@
                 </button>
 
               </form>
-              
+
             </div>
 
           </div>
@@ -2211,7 +2233,7 @@
       <h3 class="sitename">Meer Sadeq Billah</h3>
       <p>AI APPLICATION DEVELOPER • COMPUTER VISION INTEGRATOR • 18+ YEARS • 100+ PROJECTS</p>
       <div class="social-links d-flex justify-content-center">
-        <a href="mailto:sadeqbillah@gmail.com" class="email"><i class="bi bi-envelope"></i></a>
+        <a href="#" onclick="openMail(event)" class="email"><i class="bi bi-envelope"></i></a>
         <a href="tel:+821086984109" class="phone"><i class="bi bi-telephone"></i></a>
         <a href="https://github.com/sadeqbillah" target="_blank" class="github"><i class="bi bi-github"></i></a>
         <a href="https://linkedin.com/in/billahms" class="linkedin"><i class="bi bi-linkedin"></i></a>
