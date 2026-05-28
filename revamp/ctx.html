@@ -98,6 +98,17 @@
   </header>
 
   <main class="main">
+    <!-- Bootstrap Alert -->
+    <div id="mobileAlert" class="alert alert-warning text-center d-none" role="alert">
+      ⚠️ This demo works best on PC browsers. Some features may not function properly on mobile.
+    </div>
+
+    <script>
+      // Detect mobile devices
+      if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.getElementById("mobileAlert").classList.remove("d-none");
+      }
+    </script>
 
     <!-- Page Title -->
     <div class="page-title dark-background">
