@@ -2194,50 +2194,7 @@
                 </button>
 
               </form>
-              <script>
-                const form = document.querySelector(".php-email-form");
-
-                form.addEventListener("submit", async (e) => {
-                  e.preventDefault();
-                  const loading = document.querySelector(".loading");
-                  const errorMsg = document.querySelector(".error-message");
-                  const successMsg = document.querySelector(".sent-message");
-
-                  loading.style.display = "block";
-
-                  try {
-                    const response = await fetch(form.action, {
-                      method: "POST",
-                      body: new FormData(form),
-                      headers: { 'Accept': 'application/json' }
-                    });
-
-                    const data = await response.json();
-
-                    if (data.ok) {
-                      successMsg.style.display = "block";
-                      errorMsg.style.display = "none";
-
-                      // Reset only the inputs, not the whole form structure
-                      form.querySelectorAll("input, textarea").forEach(el => el.value = "");
-                    } else {
-                      errorMsg.innerText = data.error || "Submission failed.";
-                      errorMsg.style.display = "block";
-                      successMsg.style.display = "none";
-                    }
-                  } catch (error) {
-                    errorMsg.innerText = "Error: " + error.message;
-                    errorMsg.style.display = "block";
-                    successMsg.style.display = "none";
-                  } finally {
-                    loading.style.display = "none";
-                  }
-                });
-
-
-
-
-              </script>
+              
             </div>
 
           </div>
