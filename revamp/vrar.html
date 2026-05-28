@@ -17,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
-  
+
   <!-- Vendor CSS Files -->
   <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -98,20 +98,25 @@
   </header>
 
   <main class="main">
-    <div id="mobileAlert" 
-      class="alert alert-warning alert-dismissible fade show text-center" 
-      role="alert" 
-      style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; width: 90%; max-width: 600px;">
-    ⚠️ The demo on this page works best on PC browsers. Some features may not function properly on mobile.
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+    <!-- Floating Bootstrap Alert -->
+    <div id="mobileAlert" class="alert alert-warning alert-dismissible fade text-center" role="alert"
+      style="position: fixed; top: -100px; left: 50%; transform: translateX(-50%); z-index: 9999; width: 90%; max-width: 600px; transition: top 0.6s ease;">
+      ⚠️ This demo works best on PC browsers. Some features may not function properly on mobile.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 
-  <script>
-    // Detect mobile devices
-    if (!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      document.getElementById("mobileAlert").style.display = "none";
-    }
-  </script>
+    <script>
+      // Detect mobile devices
+      if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        const alertBox = document.getElementById("mobileAlert");
+        alertBox.classList.add("show"); // Bootstrap fade-in
+        setTimeout(() => {
+          alertBox.style.top = "20px"; // Slide down smoothly
+        }, 100);
+      } else {
+        document.getElementById("mobileAlert").style.display = "none";
+      }
+    </script>
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container">
@@ -140,15 +145,18 @@
                   <span class="year">2023</span>
                 </div>
                 <h1 class="project-title">VR/AR Try-On System</h1>
-                <p class="project-summary">Developed a <span class="accent-text">Javascript‑based AR/VR solution for mobile clients</span> as part of a virtual try‑on service for a leading footwear provider. This project extended the earlier OpenGL‑based try‑on system into a web‑friendly version, enabling users to experience real‑time shoe fitting through their mobile browser without requiring native apps.</p>
+                <p class="project-summary">Developed a <span class="accent-text">Javascript‑based AR/VR solution for
+                    mobile clients</span> as part of a virtual try‑on service for a leading footwear provider. This
+                  project extended the earlier OpenGL‑based try‑on system into a web‑friendly version, enabling users to
+                  experience real‑time shoe fitting through their mobile browser without requiring native apps.</p>
                 <div class="project-tags">
                   <span class="tag">AR/VR</span>
                   <span class="tag">Virtual Try‑On</span>
                   <span class="tag">Javascript</span>
-                   <span class="tag">TensorFlow.js</span>
+                  <span class="tag">TensorFlow.js</span>
                   <span class="tag">Three.js</span>
                   <span class="tag">MindAR</span>
-                   <span class="tag">Web‑Based Rendering</span>
+                  <span class="tag">Web‑Based Rendering</span>
                   <span class="tag">Mobile Clients</span>
                   <span class="tag">Footwear Industry</span>
                 </div>
@@ -163,7 +171,7 @@
         </div>
 
         <div class="visual-showcase d-none" data-aos="fade-up" data-aos-delay="100">
-          
+
           <div class="showcase-gallery">
             <div class="gallery-item large" data-aos="zoom-in" data-aos-delay="150">
               <img src="assets/img/portfolio/e2e.webp" alt="End-to-End Process" class="img-fluid glightbox">
@@ -174,8 +182,8 @@
             <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
               <img src="assets/img/portfolio/data_comm.webp" alt="Data Communication" class="img-fluid glightbox">
             </div>
-             
-             
+
+
           </div>
         </div>
 
@@ -184,7 +192,12 @@
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
               <div class="main-content ">
                 <h2>Project Description</h2>
-                <p>We implemented a <span class="accent-text">web‑based AR/VR pipeline</span> that identified and tracked user feet in live camera feeds using <span class="accent-text">TensorFlow.js</span>. A predefined 3D human foot surface model was dynamically adjusted to match the user’s foot size, and <span class="accent-text">Three.js</span> was used to calculate the render area and remap virtual shoes onto the detected surface. <span class="accent-text">MindAR</span> ensured that the virtual shoe moved naturally with the user’s foot movements, creating a realistic try‑on experience.</p>
+                <p>We implemented a <span class="accent-text">web‑based AR/VR pipeline</span> that identified and
+                  tracked user feet in live camera feeds using <span class="accent-text">TensorFlow.js</span>. A
+                  predefined 3D human foot surface model was dynamically adjusted to match the user’s foot size, and
+                  <span class="accent-text">Three.js</span> was used to calculate the render area and remap virtual
+                  shoes onto the detected surface. <span class="accent-text">MindAR</span> ensured that the virtual shoe
+                  moved naturally with the user’s foot movements, creating a realistic try‑on experience.</p>
                 <h5>Key Features Delivered:</h5>
                 <ul>
                   <li>Real‑time foot detection via TensorFlow.js</li>
@@ -193,7 +206,9 @@
                   <li>Motion tracking and alignment using MindAR</li>
                   <li>Web‑based AR/VR try‑on accessible via mobile browsers</li>
                 </ul>
-                <p>This solution allowed the client to offer a <span class="accent-text">scalable, browser‑based AR/VR experience</span>, reducing dependency on native applications and expanding accessibility for end users.</p> 
+                <p>This solution allowed the client to offer a <span class="accent-text">scalable, browser‑based AR/VR
+                    experience</span>, reducing dependency on native applications and expanding accessibility for end
+                  users.</p>
               </div>
             </div>
             <div class="col-lg-4 offset-lg-1" data-aos="fade-up" data-aos-delay="200">
@@ -223,12 +238,17 @@
           </div>
         </div>
 
-        
+
         <div class="tools-section" data-aos="fade-up" data-aos-delay="100">
           <div class="row align-items-center">
             <div class="col-lg-5">
               <h2>Tools &amp; Technologies</h2>
-              <p>The solution was built entirely in <span class="accent-text">JavaScript</span>, leveraging <span class="accent-text">TensorFlow.js</span> for machine learning‑based detection, <span class="accent-text">Three.js</span> for 3D rendering and surface mapping, and <span class="accent-text">MindAR</span> for augmented reality tracking. The architecture emphasized <span class="accent-text">lightweight performance, cross‑platform compatibility, and scalability</span>, ensuring smooth operation on mobile browsers without requiring native installations.</p>
+              <p>The solution was built entirely in <span class="accent-text">JavaScript</span>, leveraging <span
+                  class="accent-text">TensorFlow.js</span> for machine learning‑based detection, <span
+                  class="accent-text">Three.js</span> for 3D rendering and surface mapping, and <span
+                  class="accent-text">MindAR</span> for augmented reality tracking. The architecture emphasized <span
+                  class="accent-text">lightweight performance, cross‑platform compatibility, and scalability</span>,
+                ensuring smooth operation on mobile browsers without requiring native installations.</p>
             </div>
             <div class="col-lg-6 offset-lg-1">
               <div class="tools-grid">
@@ -239,8 +259,8 @@
                     <span class="tool-item">TensorFlow.js</span>
                     <span class="tool-item">Three.js</span>
                     <span class="tool-item">MindAR</span>
-                    <span class="tool-item">Web‑Based AR/VR Rendering</span> 
-                    <span class="tool-item">Mobile Browser Integration</span> 
+                    <span class="tool-item">Web‑Based AR/VR Rendering</span>
+                    <span class="tool-item">Mobile Browser Integration</span>
                   </div>
                 </div>
               </div>
@@ -252,13 +272,13 @@
           <div class="metrics-container">
             <div class="metrics-header">
               <h2>Project Output</h2>
-              <h5>Recreation demo (Works only on Chrome On PC) with face tracking and accessories try‑on <span class="accent-text">(due to NDA restrictions on final demo)</span></h5>
+              <h5>Recreation demo (Works only on Chrome On PC) with face tracking and accessories try‑on <span
+                  class="accent-text">(due to NDA restrictions on final demo)</span></h5>
               <!--p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p-->
               <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-                <iframe src="https://sadeqbillah.github.io/revamp/demo/vrar/tryon.html" 
-                  style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-                  frameborder="0" allow="accelerometer; clipboard-write; 
-                  encrypted-media; gyroscope; picture-in-picture; web-share" 
+                <iframe src="https://sadeqbillah.github.io/revamp/demo/vrar/tryon.html"
+                  style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allow="accelerometer; clipboard-write; 
+                  encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
               </div>
@@ -282,9 +302,9 @@
               </div>
             </div>
           </div-->
-        </div>
+          </div>
 
-        <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
+          <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
           <div class="gallery-slider swiper init-swiper">
             <script type="application/json" class="swiper-config">
               {
@@ -328,34 +348,34 @@
           </div>
         </div-->
 
-        <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
-          <div class="nav-wrapper">
-            <a href="diode.html" class="nav-link prev-project">
-              <div class="nav-content">
-                <span class="nav-direction">← Previous</span>
-                <span class="nav-title">Micro Diode Inspection System</span>
-              </div>
-            </a>
-            <a href="index.html#portfolio" class="nav-link all-projects">
-              <i class="bi bi-grid-3x3-gap"></i>
-              <span>All Projects</span>
-            </a>
-            <a href="seg.html" class="nav-link next-project">
-              <div class="nav-content">
-                <span class="nav-direction">Next →</span>
-                <span class="nav-title">Cloth Segmentation API</span>
-              </div>
-            </a>
+          <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
+            <div class="nav-wrapper">
+              <a href="diode.html" class="nav-link prev-project">
+                <div class="nav-content">
+                  <span class="nav-direction">← Previous</span>
+                  <span class="nav-title">Micro Diode Inspection System</span>
+                </div>
+              </a>
+              <a href="index.html#portfolio" class="nav-link all-projects">
+                <i class="bi bi-grid-3x3-gap"></i>
+                <span>All Projects</span>
+              </a>
+              <a href="seg.html" class="nav-link next-project">
+                <div class="nav-content">
+                  <span class="nav-direction">Next →</span>
+                  <span class="nav-title">Cloth Segmentation API</span>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
 
-      </div>
+        </div>
 
     </section><!-- /Portfolio Details Section -->
 
   </main>
 
-   <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Meer Sadeq Billah</h3>
       <p>AI APPLICATION DEVELOPER • COMPUTER VISION INTEGRATOR • 18+ YEARS • 100+ PROJECTS</p>
@@ -367,7 +387,8 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights
+            Reserved</span>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
@@ -383,7 +404,8 @@
 
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

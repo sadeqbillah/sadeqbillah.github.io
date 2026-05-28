@@ -99,15 +99,21 @@
 
   <main class="main">
     <!-- Floating Bootstrap Alert -->
-    <div id="mobileAlert" class="alert alert-warning alert-dismissible fade show text-center" role="alert"
-      style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; width: 90%; max-width: 600px;">
-      ⚠️ The demo on this page works best on PC browsers. Some features may not function properly on mobile.
+    <div id="mobileAlert" class="alert alert-warning alert-dismissible fade text-center" role="alert"
+      style="position: fixed; top: -100px; left: 50%; transform: translateX(-50%); z-index: 9999; width: 90%; max-width: 600px; transition: top 0.6s ease;">
+      ⚠️ This demo works best on PC browsers. Some features may not function properly on mobile.
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
     <script>
       // Detect mobile devices
-      if (!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        const alertBox = document.getElementById("mobileAlert");
+        alertBox.classList.add("show"); // Bootstrap fade-in
+        setTimeout(() => {
+          alertBox.style.top = "20px"; // Slide down smoothly
+        }, 100);
+      } else {
         document.getElementById("mobileAlert").style.display = "none";
       }
     </script>
@@ -192,7 +198,8 @@
                 <p>I contributed in a <span class="accent-text">CIHP‑PGN‑based segmentation network</span> to accurately
                   identify body parts and clothing regions in model images. The segmentation output is refined using
                   <span class="accent-text">Conditional Random Field (CRF)</span> enhancement, incorporating user
-                  feedback for improved precision.</p>
+                  feedback for improved precision.
+                </p>
                 <p>A <span class="accent-text">Next.js‑based user interface</span> allows users to select specific
                   clothing segments (e.g., upper garment, bottom garment) and change their colors interactively using a
                   color picker. This approach enables fashion companies to photograph only one variant of each product
