@@ -2170,7 +2170,7 @@
 
                     const data = await response.json();
 
-                    if (response.ok) {
+                    if (data.ok) {
                       document.querySelector(".sent-message").style.display = "block";
                       form.reset();
                     } else {
