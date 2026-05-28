@@ -98,7 +98,20 @@
   </header>
 
   <main class="main">
+    <div id="mobileAlert" 
+      class="alert alert-warning alert-dismissible fade show text-center" 
+      role="alert" 
+      style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; width: 90%; max-width: 600px;">
+    ⚠️ The demo on this page works best on PC browsers. Some features may not function properly on mobile.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
 
+  <script>
+    // Detect mobile devices
+    if (!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      document.getElementById("mobileAlert").style.display = "none";
+    }
+  </script>
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container">

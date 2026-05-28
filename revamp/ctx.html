@@ -17,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
-  
+
   <!-- Vendor CSS Files -->
   <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -98,15 +98,17 @@
   </header>
 
   <main class="main">
-    <!-- Bootstrap Alert -->
-    <div id="mobileAlert" class="alert alert-warning text-center d-none" role="alert">
-      ⚠️ This demo works best on PC browsers. Some features may not function properly on mobile.
+    <!-- Floating Bootstrap Alert -->
+    <div id="mobileAlert" class="alert alert-warning alert-dismissible fade show text-center" role="alert"
+      style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; width: 90%; max-width: 600px;">
+      ⚠️ The demo on this page works best on PC browsers. Some features may not function properly on mobile.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
     <script>
       // Detect mobile devices
-      if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        document.getElementById("mobileAlert").classList.remove("d-none");
+      if (!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.getElementById("mobileAlert").style.display = "none";
       }
     </script>
 
@@ -138,15 +140,19 @@
                   <span class="year">2023</span>
                 </div>
                 <h1 class="project-title">Cloth Color Transfer System</h1>
-                <p class="project-summary">The <span class="accent-text">Cloth Color Transfer</span> project introduces an intelligent system that enables fashion outlets to digitally change the color of garments in pre‑shoot model images. By eliminating the need for multiple photoshoots for each color variant, the system reduces production costs by approximately 50% per model shoot, streamlining the workflow for e‑commerce and fashion photography.</p>
+                <p class="project-summary">The <span class="accent-text">Cloth Color Transfer</span> project introduces
+                  an intelligent system that enables fashion outlets to digitally change the color of garments in
+                  pre‑shoot model images. By eliminating the need for multiple photoshoots for each color variant, the
+                  system reduces production costs by approximately 50% per model shoot, streamlining the workflow for
+                  e‑commerce and fashion photography.</p>
                 <div class="project-tags">
                   <span class="tag">Cloth Color Transfer</span>
                   <span class="tag">Fashion Technology</span>
                   <span class="tag">Image Segmentation</span>
-                   <span class="tag">CRF Enhancement</span>
+                  <span class="tag">CRF Enhancement</span>
                   <span class="tag">Deep Learning</span>
                   <span class="tag">Cost Optimization</span>
-                   <span class="tag">TensorFlow</span>
+                  <span class="tag">TensorFlow</span>
                   <span class="tag">Flask Web Service</span>
                   <span class="tag">Next.js Interface</span>
                 </div>
@@ -154,14 +160,15 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
               <div class="hero-image">
-                <img src="assets/img/portfolio/ct.webp" alt="Cloth Color Transfer System" class="img-fluid" loading="lazy">
+                <img src="assets/img/portfolio/ct.webp" alt="Cloth Color Transfer System" class="img-fluid"
+                  loading="lazy">
               </div>
             </div>
           </div>
         </div>
 
         <div class="visual-showcase d-none" data-aos="fade-up" data-aos-delay="100">
-          
+
           <div class="showcase-gallery">
             <div class="gallery-item large" data-aos="zoom-in" data-aos-delay="150">
               <img src="assets/img/portfolio/e2e.webp" alt="End-to-End Process" class="img-fluid glightbox">
@@ -172,8 +179,8 @@
             <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
               <img src="assets/img/portfolio/data_comm.webp" alt="Data Communication" class="img-fluid glightbox">
             </div>
-             
-             
+
+
           </div>
         </div>
 
@@ -182,8 +189,14 @@
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
               <div class="main-content ">
                 <h2>Project Description</h2>
-                <p>I contributed in a <span class="accent-text">CIHP‑PGN‑based segmentation network</span> to accurately identify body parts and clothing regions in model images. The segmentation output is refined using <span class="accent-text">Conditional Random Field (CRF)</span> enhancement, incorporating user feedback for improved precision.</p>
-                <p>A <span class="accent-text">Next.js‑based user interface</span> allows users to select specific clothing segments (e.g., upper garment, bottom garment) and change their colors interactively using a color picker. This approach enables fashion companies to photograph only one variant of each product and digitally generate all other color options, saving both time and model fees.</p>
+                <p>I contributed in a <span class="accent-text">CIHP‑PGN‑based segmentation network</span> to accurately
+                  identify body parts and clothing regions in model images. The segmentation output is refined using
+                  <span class="accent-text">Conditional Random Field (CRF)</span> enhancement, incorporating user
+                  feedback for improved precision.</p>
+                <p>A <span class="accent-text">Next.js‑based user interface</span> allows users to select specific
+                  clothing segments (e.g., upper garment, bottom garment) and change their colors interactively using a
+                  color picker. This approach enables fashion companies to photograph only one variant of each product
+                  and digitally generate all other color options, saving both time and model fees.</p>
                 <h5>Key Features Delivered:</h5>
                 <ul>
                   <li>Near real‑time inference pipeline (23s → 2s)</li>
@@ -223,12 +236,15 @@
           </div>
         </div>
 
-        
+
         <div class="tools-section" data-aos="fade-up" data-aos-delay="100">
           <div class="row align-items-center">
             <div class="col-lg-5">
               <h2>Tools &amp; Technologies</h2>
-              <p>Our system combines deep learning, web development, and interactive design. The segmentation and enhancement pipeline runs on TensorFlow, while Flask serves as the communication bridge between the model and the web interface. The Next.js front‑end provides a responsive, user‑friendly environment for color manipulation and feedback collection.</p>
+              <p>Our system combines deep learning, web development, and interactive design. The segmentation and
+                enhancement pipeline runs on TensorFlow, while Flask serves as the communication bridge between the
+                model and the web interface. The Next.js front‑end provides a responsive, user‑friendly environment for
+                color manipulation and feedback collection.</p>
             </div>
             <div class="col-lg-6 offset-lg-1">
               <div class="tools-grid">
@@ -239,7 +255,7 @@
                     <span class="tool-item">Flask</span>
                     <span class="tool-item">Next.js</span>
                     <span class="tool-item">Python</span>
-                    <span class="tool-item">JavaScript</span> 
+                    <span class="tool-item">JavaScript</span>
                     <span class="tool-item">HTML/CSS</span>
                     <span class="tool-item">CRF (Conditional Random Field)</span>
                     <span class="tool-item">CIHP‑PGN Network</span>
@@ -255,12 +271,13 @@
           <div class="metrics-container">
             <div class="metrics-header">
               <h2>Project Output</h2>
-              <h5>Recreation demo with static segmentation <span class="accent-text">(Segmentation API is not used avoid HIGH GPU Usage)</span></h5>
+              <h5>Recreation demo with static segmentation <span class="accent-text">(Segmentation API is not used avoid
+                  HIGH GPU Usage)</span></h5>
               <!--p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p-->
               <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-                <iframe src="https://sadeqbillah.github.io/revamp/demo/ctx/index.html" 
-                  style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-                  frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                <iframe src="https://sadeqbillah.github.io/revamp/demo/ctx/index.html"
+                  style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
               </div>
             </div>
@@ -283,9 +300,9 @@
               </div>
             </div>
           </div-->
-        </div>
+          </div>
 
-        <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
+          <!--div class="additional-gallery" data-aos="fade-up" data-aos-delay="100">
           <div class="gallery-slider swiper init-swiper">
             <script type="application/json" class="swiper-config">
               {
@@ -329,34 +346,34 @@
           </div>
         </div-->
 
-        <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
-          <div class="nav-wrapper">
-            <a href="seg.html" class="nav-link prev-project">
-              <div class="nav-content">
-                <span class="nav-direction">← Previous</span>
-                <span class="nav-title">Cloth Segmentation API</span>
-              </div>
-            </a>
-            <a href="index.html#portfolio" class="nav-link all-projects">
-              <i class="bi bi-grid-3x3-gap"></i>
-              <span>All Projects</span>
-            </a>
-            <a href="vton.html" class="nav-link next-project">
-              <div class="nav-content">
-                <span class="nav-direction">Next →</span>
-                <span class="nav-title">Virtual Try-On System</span>
-              </div>
-            </a>
+          <div class="project-nav" data-aos="fade-up" data-aos-delay="100">
+            <div class="nav-wrapper">
+              <a href="seg.html" class="nav-link prev-project">
+                <div class="nav-content">
+                  <span class="nav-direction">← Previous</span>
+                  <span class="nav-title">Cloth Segmentation API</span>
+                </div>
+              </a>
+              <a href="index.html#portfolio" class="nav-link all-projects">
+                <i class="bi bi-grid-3x3-gap"></i>
+                <span>All Projects</span>
+              </a>
+              <a href="vton.html" class="nav-link next-project">
+                <div class="nav-content">
+                  <span class="nav-direction">Next →</span>
+                  <span class="nav-title">Virtual Try-On System</span>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
 
-      </div>
+        </div>
 
     </section><!-- /Portfolio Details Section -->
 
   </main>
 
-   <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Meer Sadeq Billah</h3>
       <p>AI APPLICATION DEVELOPER • COMPUTER VISION INTEGRATOR • 18+ YEARS • 100+ PROJECTS</p>
@@ -368,7 +385,8 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">Meer Sadeq Billah</strong> <span>All Rights
+            Reserved</span>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
@@ -382,7 +400,8 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
