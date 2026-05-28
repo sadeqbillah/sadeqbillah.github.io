@@ -2168,11 +2168,13 @@
                       headers: { 'Accept': 'application/json' }
                     });
 
+                    const data = await response.json();
+
                     if (response.ok) {
                       document.querySelector(".sent-message").style.display = "block";
                       form.reset();
                     } else {
-                      document.querySelector(".error-message").innerText = "Submission failed.";
+                      document.querySelector(".error-message").innerText = data.error || "Submission failed.";
                       document.querySelector(".error-message").style.display = "block";
                     }
                   } catch (error) {
@@ -2182,6 +2184,7 @@
                     document.querySelector(".loading").style.display = "none";
                   }
                 });
+
 
 
               </script>
