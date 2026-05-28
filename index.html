@@ -2199,7 +2199,11 @@
 
                 form.addEventListener("submit", async (e) => {
                   e.preventDefault();
-                  document.querySelector(".loading").style.display = "block";
+                  const loading = document.querySelector(".loading");
+                  const errorMsg = document.querySelector(".error-message");
+                  const successMsg = document.querySelector(".sent-message");
+
+                  loading.style.display = "block";
 
                   try {
                     const response = await fetch(form.action, {
@@ -2211,19 +2215,25 @@
                     const data = await response.json();
 
                     if (data.ok) {
-                      document.querySelector(".sent-message").style.display = "block";
-                      form.reset();
+                      successMsg.style.display = "block";
+                      errorMsg.style.display = "none";
+
+                      // Reset only the inputs, not the whole form structure
+                      form.querySelectorAll("input, textarea").forEach(el => el.value = "");
                     } else {
-                      document.querySelector(".error-message").innerText = data.error || "Submission failed.";
-                      document.querySelector(".error-message").style.display = "block";
+                      errorMsg.innerText = data.error || "Submission failed.";
+                      errorMsg.style.display = "block";
+                      successMsg.style.display = "none";
                     }
                   } catch (error) {
-                    document.querySelector(".error-message").innerText = "Error: " + error.message;
-                    document.querySelector(".error-message").style.display = "block";
+                    errorMsg.innerText = "Error: " + error.message;
+                    errorMsg.style.display = "block";
+                    successMsg.style.display = "none";
                   } finally {
-                    document.querySelector(".loading").style.display = "none";
+                    loading.style.display = "none";
                   }
                 });
+
 
 
 
