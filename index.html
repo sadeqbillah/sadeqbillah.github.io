@@ -100,7 +100,7 @@
 
     <div class="social-links text-center">
       <a href="#" onclick="openMail(event)" class="email"><i class="bi bi-envelope"></i></a>
-      <a href="tel:+821086984109" class="phone"><i class="bi bi-telephone"></i></a>
+      <a href="#" onclick="openPhone(event)" class="phone"><i class="bi bi-telephone"></i></a>
       <a href="https://github.com/sadeqbillah" target="_blank" class="github"><i class="bi bi-github"></i></a>
       <a href="https://linkedin.com/in/billahms" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
@@ -151,23 +151,23 @@
                   class="img-fluid main-image">
                 <div class="floating-card card-1" data-aos="fade-up" data-aos-delay="600">
                   <i class="bi bi-pc-display"></i>
-                  <span>Started my journey as<br/>the world was moving<br/>from desktop to web.</span>
+                  <span class="accent-text">2007</span><span> Started my journey as<br/>the world was moving<br/>from desktop to web.</span>
                 </div>
                 <div class="floating-card card-2" data-aos="fade-up" data-aos-delay="700">
                   <i class="bi bi-code-square"></i>
-                  <span>Survived the<br/>cross-browser<br/>compatibility wars!</span>
+                  <span class="accent-text">2009</span><span> Survived the<br/>cross-browser<br/>compatibility wars!</span>
                 </div>
                 <div class="floating-card card-3" data-aos="fade-up" data-aos-delay="800">
                   <i class="bi bi-phone"></i>
-                  <span>Shifted into mobile<br/>development as the<br/>world went mobile-first.</span>
+                  <span class="accent-text">2010</span><span> Shifted into mobile<br/>development as the<br/>world went mobile-first.</span>
                 </div>
                 <div class="floating-card card-4" data-aos="fade-up" data-aos-delay="900">
                   <i class="bi bi-file-earmark-image-fill"></i>
-                  <span>Dived deep into<br/>Image Processing<br/>&amp; Computer Vision.</span>
+                  <span class="accent-text">2015</span><span> Dived deep into<br/>Image Processing<br/>&amp; Computer Vision.</span>
                 </div>
                 <div class="floating-card card-5" data-aos="fade-up" data-aos-delay="1000">
                   <i class="bi bi-file-earmark-image-fill"></i>
-                  <span>Transformed into an<br/>AI Application Developer<br/>using LLMs & Vision Models.</span>
+                  <span class="accent-text">2020</span><span> Transformed into an<br/>AI Application Developer<br/>using LLMs & Vision Models.</span>
                 </div>
               </div>
             </div>
@@ -2160,20 +2160,42 @@
                 </div>
                 <div class="detail-content">
                   <span class="detail-label">Call me</span>
-                  <span class="detail-value">+82 10 8698-4109</span>
+                  <span class="detail-value" id="phone-container">
+                    <a href="#" onclick="revealPhone(); return false;">Show Phone Number</a>
+                  </span>
                 </div>
               </div>
+              <script>
+                function revealPhone() {
+                  const encoded = "KzgyMTA4Njk4NDEwOQ==";
+                  const phone = atob(encoded);
 
+                  // Replace the button with a tel link
+                  const container = document.getElementById("phone-container");
+                  container.innerHTML = `<a href="tel:${phone}">${phone}</a>`;
+                }
+              </script>
               <div class="detail-item">
                 <div class="detail-icon">
                   <i class="bi bi-geo-alt-fill"></i>
                 </div>
                 <div class="detail-content">
                   <span class="detail-label">Visit me</span>
-                  <span class="detail-value">H803 B106 Geomdan-ro 851<br>Incheon, South Korea</span>
+                  <span class="detail-value" id="address-container">
+                    <a href="#" onclick="revealAddress(); return false;">Show Address</a>
+                  </span>
                 </div>
               </div>
+              <script>
+                function revealAddress() {
+                  const encoded = "ODUxIEdlb21kYW4tcm8sIFNlby1ndSwgSW5jaGVvbg==";
+                  const address = atob(encoded);
 
+                  // Replace the button with a Google Maps link
+                  const container = document.getElementById("address-container");
+                  container.innerHTML = `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}" target="_blank">${address}</a>`;
+                }  
+                </script>
             </div>
 
           </div>
@@ -2240,8 +2262,8 @@
       <h3 class="sitename">Meer Sadeq Billah</h3>
       <p>AI APPLICATION DEVELOPER • COMPUTER VISION INTEGRATOR • 18+ YEARS • 100+ PROJECTS</p>
       <div class="social-links d-flex justify-content-center">
-        <a href="#" onclick="openMail(event)" class="email"><i class="bi bi-envelope"></i></a>
-        <a href="tel:+821086984109" class="phone"><i class="bi bi-telephone"></i></a>
+        <a href="#" onclick="openMail(event); return false;" class="email"><i class="bi bi-envelope"></i></a>
+        <a href="#" onclick="openPhone(event); return false;" class="phone"><i class="bi bi-telephone"></i></a>
         <a href="https://github.com/sadeqbillah" target="_blank" class="github"><i class="bi bi-github"></i></a>
         <a href="https://linkedin.com/in/billahms" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>

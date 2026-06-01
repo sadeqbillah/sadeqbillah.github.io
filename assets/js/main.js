@@ -216,12 +216,33 @@
 })();
 
 function openMail(event) {
-    event.preventDefault(); // prevent scrolling to top
+  event.preventDefault(); // prevent scrolling to top
 
-    // Base64 encoded "sadeqbillah@gmail.com"
-    const encoded = "c2FkZXFiaWxsYWhAZ21haWwuY29t";
-    const email = atob(encoded);
+  const encoded = "c2FkZXFiaWxsYWhAZ21haWwuY29t";
+  const email = atob(encoded);
 
-    // Trigger the mail client
-    window.location.href = "mailto:" + email;
-  }
+  // Trigger the mail client
+  window.location.href = "mailto:" + email;
+}
+
+function openPhone(event) {
+  event.preventDefault();
+
+  const encoded = "KzgyMTA4Njk4NDEwOQ==";
+  const phone = atob(encoded);
+
+  // Trigger the dialer
+  window.location.href = "tel:" + phone;
+}
+
+
+
+function showAddress(event) {
+  event.preventDefault();
+
+  const encoded = "ODUxIEdlb21kYW4tcm8sIFNlby1ndSwgSW5jaGVvbg==";
+  const address = atob(encoded);
+
+  // Display in an alert or inject into the page
+  alert("Address: " + address);
+}  
